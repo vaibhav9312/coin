@@ -1,0 +1,99 @@
+header{border-bottom:1px solid #eeeeee;}
+.individual{padding-top:20px;}
+.project-logo{padding: 0 10px 5px 0;}
+.inline{display:inline-block;vertical-align: middle;}
+.project-desc{padding: 19px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    max-width: 800px;
+    display: block;
+    margin: auto;}
+ .projectinfo{max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;}
+ .infoitem{    padding: 7px 0 7px 5px;
+    border-top: 1px solid #ddd;}
+    .infolabel{font-weight: 700;
+    width: 240px;
+    vertical-align: top;color:#6a6c6f;}
+    .infovalue{    vertical-align: top;}
+
+ .crowdfund{margin-top: 40px;}
+ .crowdfund h2{color: #34495e;
+    font-size: 2em;}
+ .infoitem .date{width:250px;}
+ #endclock, #startclock{font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 16px;}
+#startclock div>span {
+    padding: 12px;
+    border-radius: 3px;
+    background: #00816a;
+    display: inline-block;
+    min-width: 20px;
+}
+#startclock>div{padding: 0;
+    margin-right: 4px;
+    display: inline-block;}
+.smalltext {
+    color: #000;
+    padding-top: 5px;
+    font-size: 12px;
+}
+ #endclock div>span {
+    padding: 12px;
+    border-radius: 3px;
+    background: #ff5733;
+    display: inline-block;
+    min-width: 20px;
+}
+ #endclock>div{padding: 0;
+    margin-right: 4px;
+    display: inline-block;}
+.smalltext {
+    color: #000;
+    padding-top: 5px;
+    font-size: 12px;
+}
+.infodetails{color:#6a6c6f;}
+.paragraph{margin-bottom:0px;}
+.crowdfund-distro{margin-top: 40px;}
+.project-links{margin-top:40px;}
+.project-links h2{    color: #34495e;
+    font-size: 1.5em;}
+.proj-link img{margin-right: 5px;}
+.proj-link a{text-decoration:none;margin-right:50px;}
+.project-team{margin-top:40px;}
+.project-team h2{color: #34495e;
+    font-size: 1.5em;}
+ .project-team table th, td{    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid #ddd}
+ .comment-policy .title{    font-size: 20px;
+    color: #494e58;
+    margin-bottom: 15px;    font-weight: 700;}
+    .comment-policy{    margin-bottom: 25px;
+    color: #656c7a;
+    background-color: #e7e9ee;
+    border-color: #c2c6cc;
+    font-size: 16px;
+    width: 100%;
+    line-height: 1.45em;
+    flex-grow: 0;
+    background-position: right 20px top 20px;
+    border: 1px solid #c2c9d4;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;}
+    .comment-policy .content{position: relative;
+    z-index: 1;}
+ .padding-double{padding:20px;}
+
+ .floater{float:left;}
+ @media screen and (max-width:767px){
+        .floater p{text-align:center !important;}
+    }

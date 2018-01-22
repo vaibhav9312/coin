@@ -1,0 +1,152 @@
+/*==========================================
+==== This Page is Developed BY M.Ibrahim
+==== URL: fiverribrahm.000webhostapp.com
+==== Profile: fiverr.com/ibrahm; 
+==========================================*/
+@font-face{
+
+	src: url(../fonts/C.ttf);
+	font-family: 'C';
+}
+body{
+	font-family: 'C',sans-serif;
+	color: #383838;
+}
+ .navbar{
+ 	font-family: 'C',sans-serif;
+ 	font-weight: bold;
+ 	background: #fff;
+ }
+ .navbar-brand span{
+ 	color: #383838;
+ 	padding-left: 40px;
+ 	font-size: 30px;
+ }
+ .navbar-brand img{
+ 	height: 60px;
+ }
+ .navbar .nav-link, .navbar ul li a{
+ 	color: #383838 !important;
+ }
+
+.navbar-light .navbar-toggler{padding:0px;}
+.navbar-toggler-icon{font-size:20px !important;}
+/*.navbar-nav{width:1000px;border:1px solid black;}*/
+.navbar-nav{width:100%;}
+.nav-item{width:20%;font-size:22px;text-align:center;}
+.menufloater{float:left;}
+ /* HEro Sectioin */
+ .hero{
+ 	background: #e8ecee;
+ 	
+ }
+.upperheadertag{color:#666666;font-weight:700;}
+.paragraph{color:#666666;}
+ /* CTA */
+ .CTA .txt{
+ 	border: 1px solid #9d9d9d;
+ 	padding: 15px 30px;
+ }
+ .CTA .txt a.btn{
+ 	border-radius: 0;
+ 	padding: 15px 30px;
+ }
+
+
+ /* TOKEN SECTION */
+ .TOK a{
+ 	text-decoration: none;
+ }
+ .TOK .bx{
+ 	border: 1px solid #383838;
+ 	padding: 20px	
+ }
+ .TOK .bx h4{
+	color: #383838;
+	font-weight: 400;
+
+ }
+ .TOK .bx p.small{
+ 	font-size: 12px;
+ 	color: #383839;
+ }
+ .TOK .st{
+ 	text-align: center;
+ 	background: #383838;
+ 	color: #fff;
+ 	padding:5px;
+ }
+ .TOK .time{
+ 	width: 95%;
+ 	margin: auto;
+
+ }
+ .TOK .time img{
+ 	width: 95%;
+ 	display: none;
+ }
+
+.TOK1 .bx{
+	padding: 15px;
+}
+.TOK1 .bx img{
+	max-width: 60px;
+}
+.TOK1 .bx h4{
+	font-size: 18px;
+}
+ .TOK1 .bx p.small{
+ 	font-size: 9px;
+ }
+
+ @media( max-width: 576px){
+ 	.TOK .bx h4{
+ 		font-size: 28px;
+ 	}
+ 	.TOK .bx p.small{
+ 		font-size: 14px;
+ 	}
+ 	.TOK1 .bx img{
+ 		max-width: 90px;
+ 		margin-top: 10px;
+ 	}
+ }
+  @media( max-width: 480px){
+ 	.TOK .bx h4{
+ 		font-size: 28px;
+ 	}
+ 	.TOK .bx p.small{
+ 		font-size: 12px;
+ 	}
+ 	.TOK1 .bx img{
+ 		max-width: 70px;
+ 		margin-top: 10px;
+ 	}
+ }
+
+
+ footer{
+ 	background: #2b2b2b;
+
+ 	color: #fff;
+ }
+ footer ul li a{
+ 	color:  #fff;
+ }
+
+ .floater{float:left;}
+	@media screen and (max-width:1020px) and (min-width:768px){
+	.navbar-brand{margin-bottom:50px;}
+	.navbar-nav{position:absolute;right:0px;border:1px solid #eeeeee;top:85px;}
+}
+  @media screen and (max-width:767px){
+ 	.px-5{padding-right:0px !important;}
+ 	.pr-2{padding-right:0px !important;}
+ 	.socialicons{text-align:center !important;}
+ 	.navbar-brand img{width:290px !important;}
+ 	.navbar{padding-left:0px !important;}
+ 	.mobilemenu{text-align:center !important;}
+ 	.navbar-light .navbar-toggler{position:absolute;right:10px;top:25px;}
+ 	 .floater p{text-align:center !important;}
+ 	 .navbar-nav li{width:100%;}
+ }
