@@ -1,0 +1,120 @@
+<% include sidebar %>
+
+  <%if(save){%>
+    <script>
+        alert("Blog Successfully Svae");
+    </script>
+  <%}%>
+  <style type="text/css" media="all">
+    @import "css/widgEditor.css";
+  </style>
+  <script type="text/javascript" src="js/widgEditor.js"></script>
+                   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <div class="container-fluid">              
+<!-- ADD BLOG PAGE -->
+      <div class="container" style="border:1px solid #eee;width:100%;">
+            <div class="row" style="height: auto;color: black;box-shadow: 0 0 11px rgba(33,33,33,.5);border-radius: 5px;" id="editsec">
+                    <div class="tab-pane active" id="1">
+                    <h1 class="text-center">ADD A BLOG PAGE </h1>
+
+                    
+                    <div class="col-md-12" style="margin-top: 30px;">
+
+                        <form method="post" action="/blogdata" >
+                            <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                    
+
+                    <div class="form-group marginadjust"> <!-- Full Name -->
+                        <label for="full_name_id" class="control-label">Title</label>
+                        <input type="text" class="form-control" name="title"  placeholder="" required>
+                    </div>  
+            
+                    <div class="form-group marginadjust" > <!-- Full Name -->
+                        <label for="full_name_id" class="control-label">Body</label>
+                            <textarea id="noise" name="body" name="noise" class="widgEditor nothing"></textarea>
+                      </div>  
+
+            <!-- <div class="form-group input_fields_wrap marginadjust" id="videotag"> <!-- Full Name --
+                <label for="full_name_id" class="control-label">Video: (only Youtube/vimeo Embed-Link)&nbsp;&nbsp;</label>
+                <input type="text" class="form-control" id="videoup" formControlName="blogvideo" [ngClass]="{'error':!blogdata.controls['blogvideo'].valid}" placeholder="" accept="video/*">
+            
+            </div> -->
+          
+
+            <div class="form-group marginadjust"> <!-- Full Name -->
+                <label for="full_name_id" class="control-label">Categories: (Categories should be separated by ",")</label>
+                <input type="text" class="form-control" id="tagbg" name="tags" formControlName="blogtags" [ngClass]="{'error':!blogdata.controls['blogtags'].valid}" placeholder="" >
+                <option value=""></option>
+            </div>  
+           
+
+            <div class="form-group marginadjust"> <!-- Full Name -->
+                <label for="full_name_id" class="control-label">Meta-Description: (not more than 150 characters)</label>
+                <input type="text" class="form-control" name="mdesc" id="descup"formControlName="blogmdesc" [ngClass]="{'error':!blogdata.controls['blogmdesc'].valid}"   />
+            </div>
+          
+
+            <div class="card marginadjust">
+                    <label for="full_name_id" class="control-label">Image</label>
+                    <div class="card-block marginadjust">
+                        <input type="file" id="filedata" accept="application/img" style="margin:0 auto;">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <input type="text" style="display:none" name="img" id="img1"/>
+            <button type="submit" id="blogsave"></button>
+        </form>
+            <div class="col-sm-12 text-center marginadjust">
+                <button type="submit" onclick="imgsave()" class="btn btn-info btn-lg " id="clo">Submit</button>
+            </div>
+             
+
+            </div>
+                    </div>
+
+      </div>
+  
+    
+</div>
+<script>
+    function imgsave(){
+        var data1 = new FormData();
+      var ty=$('#filedata').prop('files')[0];
+      data1.append('file',ty );
+     
+      $.ajax({
+          type: 'POST',               
+          processData: false, // important
+          contentType: false, // important
+          data: data1,
+          url: 'file/uploads',
+          dataType : 'script',  
+          success: function(data){
+           
+            var image = JSON.parse(data)[0].filename;
+          $('#img1').val(image);
+          $('#blogsave').click();
+          }
+          
+      }); 
+    }
+</script>
+
+
+</div>
+
+</section>
+</section>
+
+<!-- ADD BLOG PAGE ENDS HERE -->
+
+
+
+
+
+                       

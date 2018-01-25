@@ -1,0 +1,23 @@
+/* a.active{color:#ff7800 !important} */
+/* a:active{color:#ff7800 !important} */
+@font-face{
+
+    src: url(../fonts/OregonLDO.ttf);
+	font-family: 'E';
+}
+
+.nav-link{color: #585858 !important}
+.nav-link button{font-family: 'E';font-size:22px;padding-top:0px;padding-bottom:0px;background-color:#34495e;color:white;}
+#profilename{position:relative;}
+.profileview{text-align:left;position:absolute;border:1px solid black;list-style:none;left:25%;width:150px;padding-left:0px;border-radius:5px;padding:10px;font-family: 'E';top:70px;background:#ffffff;border-color:#eeeeee;z-index:1}
+.fa{padding-left:5px;padding-right:5px;}
+.profileview li a{color: #585858}
+@media screen and (max-width:1200px){
+    .profileview{left:0%;}
+}
+@media screen and (max-width:1030px){
+    .profileview{top:50px;}
+}
+@media screen and (max-width:767px){
+    .profileview{top:50px;width:100%;left:0%;text-align:center;}
+}

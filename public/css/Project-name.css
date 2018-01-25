@@ -5,12 +5,36 @@
 ==========================================*/
 @font-face{
 
-	src: url(../fonts/C.ttf);
+	src: url(../fonts/OregonLDOBlack.ttf);
 	font-family: 'C';
+	src: url(../fonts/OregonLDOLight.ttf);
+	font-family: 'D';
+	src: url(../fonts/OregonLDO.ttf);
+	font-family: 'E';
 }
+
 body{
-	font-family: 'C',sans-serif;
+	font-family: 'C';
 	color: #383838;
+}
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
 }
  .navbar{
  	font-family: 'C',sans-serif;
@@ -26,8 +50,10 @@ body{
  	height: 60px;
  }
  .navbar .nav-link, .navbar ul li a{
- 	color: #383838 !important;
+
+	 font-family: 'E';
  }
+ .nav-link{color:#585858 !important;}
 
 .navbar-light .navbar-toggler{padding:0px;}
 .navbar-toggler-icon{font-size:20px !important;}
@@ -40,26 +66,28 @@ body{
  	background: #e8ecee;
  	
  }
-.upperheadertag{color:#666666;font-weight:700;}
+.upperheadertag{color:#666666;font-weight:700;font-family: 'C';padding-top:20px}
+.pt-4 h4{font-family: 'C';}
 .paragraph{color:#666666;}
  /* CTA */
  .CTA .txt{
- 	border: 1px solid #9d9d9d;
+ 	border-bottom: 1px solid grey;
  	padding: 15px 30px;
  }
  .CTA .txt a.btn{
  	border-radius: 0;
  	padding: 15px 30px;
  }
-
+.borderradius{border-radius:10px;overflow:hidden}
 
  /* TOKEN SECTION */
  .TOK a{
  	text-decoration: none;
  }
  .TOK .bx{
- 	border: 1px solid #383838;
- 	padding: 20px	
+ 	/* border: 1px solid #383838; */
+	 padding: 20px;
+	 background-color:#e8ecee;
  }
  .TOK .bx h4{
 	color: #383838;
@@ -72,13 +100,15 @@ body{
  }
  .TOK .st{
  	text-align: center;
- 	background: #383838;
+ 	background: #808080;
  	color: #fff;
- 	padding:5px;
+	 padding:5px;
+	 margin-bottom:0px;
  }
  .TOK .time{
  	width: 95%;
- 	margin: auto;
+	 margin: auto;
+	 padding-top:10px;
 
  }
  .TOK .time img{
@@ -128,14 +158,16 @@ body{
  footer{
  	background: #2b2b2b;
 
- 	color: #fff;
+	 color: #fff;
+	 font-family: 'E';
  }
  footer ul li a{
- 	color:  #fff;
+	 color:  #fff;
+	 font-family: 'E';
  }
 
  .floater{float:left;}
-	@media screen and (max-width:1020px) and (min-width:768px){
+	@media screen and (max-width:1030px) and (min-width:768px){
 	.navbar-brand{margin-bottom:50px;}
 	.navbar-nav{position:absolute;right:0px;border:1px solid #eeeeee;top:85px;}
 }

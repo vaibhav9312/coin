@@ -1,0 +1,27 @@
+@font-face{
+
+	src: url(../fonts/OregonLDOBlack.ttf);
+	font-family: 'C';
+	src: url(../fonts/OregonLDOLight.ttf);
+	font-family: 'D';
+	
+}
+.advancesubmit{padding-bottom:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
+.infovalue .form-control{margin-bottom:0px !important;}
+.panel-heading{    background-color: #f7f9fa;position:relative}
+.inline h4{font-size:18px;}
+.token{color:#6a6c6f}
+.form-signin{width:100%;max-width:100%;}
+.col-md-4{float:left}
+.col-md-2{float:left;padding-top:10px;padding-left:20px;}
+.clear{clear:both}
+.teamhtag{font-size:18px;font-family: 'C';}
+.addmember{margin-top:20px;background-color:#5bc0de;border:1px solid #5bc0de;color:white;cursor:pointer;margin-left:20px;}
+.next{margin-left:20px;background-color:#34495e;}
+.back{background-color:#34495e;}
+.formhandler{border:1px solid #eee;overflow:hidden;border-radius:10px;background-color:white;margin-bottom:30px;}
+.teamheading{padding:5px;padding-left:30px;}
+.fa-times{position:absolute;right:10px;top:10px;cursor:pointer;}
+.panel{margin-top:30px;}
+.panel h2{padding-left:30px;color:#6a6c6f;font-family: 'C';}
+.submitheading{padding-top:30px;}

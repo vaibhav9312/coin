@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/Project-name.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-light px-5 py-2">
+    <!-- <header> -->
+        <%- include menu %>
+      <!-- <nav class="navbar navbar-expand-md navbar-light px-5 py-2">
         <a class="navbar-brand" href="/"><img src="img/logoz3.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -25,26 +26,34 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/news">News <span class="sr-only">(current)</span></a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="html_pages/news.html">Blog</a>
-              </li> -->
+         
               <li class="nav-item">
                 <a class="nav-link" href="/advertise">Advertise</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/login">Submit</a>
+                <a class="nav-link" href="/submit">Submit</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/contactus">Contact Us</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
+              <%if(user){%>
+              <li class="nav-item" style="display:inline-block"><%=user%>
+                <ul class="navbar-nav m-0 mobilemenu">
+                    <li>Profile</li>
+                    <li>Listing</li>
+                    <li><a href="/logout"> Logout</a></li>
+                </ul>
               </li>
+              <%}else{%>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+                <%}%>
             </ul>
         
         </div>
-      </nav>
-    </header>
+      </nav> -->
+    <!-- </header> -->
     <section class="hero">
       <div class="container text-center text-white py-4">
         <h3 class="font-weight-bold upperheadertag">The Best Token Sales and Ongoing ICO</h3>
@@ -73,20 +82,22 @@
         <div class="txt d-lg-flex justify-content-between text-center">
           <img src="img/jibrel.png" alt="">
           <div class="text-center pt-4">
-            <h4>FLIP CRYPTO-TOKEN FOR GAMERS FROM <br>GAMING EXPERTS</h4>
+            <h4><b>Decentralized Marketing Campaign Management Platform</b></h4>
+            <button class="btn btn-lg" style="background:#ff8a00;color:white;margin-top:20px;margin-bottom:10px">Participate in the ICO</button>
           </div>
          <div class="pt-4">
-            <a href="#" class="btn btn-danger">Join the Revolution!</a>
+           
         </div>
         </div>
       </div>
     </section>
     <section class="TOK py-4">
-      <h2 class="text-center font-weight-bold pl-md-5 pl-1">Grade A Token Sales</h2>
+      <h3 class="font-weight-bold pl-md-5 pl-1" style="color:rgb(255, 120, 0)">Grade A Token Sales</h3>
       <div class="container">
         <div class="row py-4">
           <div class="col-md-4">
             <a href="https://apollodae.io">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/apollo.jpeg" alt="">
@@ -97,6 +108,7 @@
                 </div>
               </div>
               <p class="st">Digital Asset Exchange</p>
+              </div>
               <a href="html_pages/individualform.html"><div class="text-center pt-1 time mb-5 mb-md-0" id="time1">
                 <img src="img/time.png" alt="" class="m-auto img-fluid"></a>
               </div>
@@ -104,6 +116,7 @@
           </div>
           <div class="col-md-4">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/1655.png" alt="">
@@ -114,6 +127,7 @@
                 </div>
               </div>
               <p class="st">Green Energy Trading Platform</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time2">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -121,6 +135,7 @@
           </div>
           <div class="col-md-4">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/flux.png" alt="">
@@ -131,6 +146,7 @@
                 </div>
               </div>
               <p class="st">Decentralized Gaming Ecosystem</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time3">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -140,6 +156,7 @@
         <div class="row py-4">
           <div class="col-md-4">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/letbet.png" alt="">
@@ -150,6 +167,7 @@
                 </div>
               </div>
               <p class="st">Online Gambling Platform</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time4">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -157,6 +175,7 @@
           </div>
           <div class="col-md-4">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/lucyd.jpeg" alt="">
@@ -167,6 +186,7 @@
                 </div>
               </div>
               <p class="st">Building Next-Gen Smartglasses</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time5">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -174,6 +194,7 @@
           </div>
           <div class="col-md-4">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/medical.png" alt="">
@@ -184,6 +205,7 @@
                 </div>
               </div>
               <p class="st">Electronic Health Records</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time6">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -193,11 +215,12 @@
       </div>
     </section>
     <section class="TOK TOK1 py-4">
-      <h2 class="text-center font-weight-bold pl-md-5 pl-1">Grade B Token Sales</h2>
+      <h3 class="font-weight-bold pl-md-5 pl-1" style="color:rgb(255, 120, 0)">Grade B Token Sales</h3>
       <div class="container">
         <div class="row py-4">
           <div class="col-md-3 col-sm-6">
             <a href="#">
+             <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/copytrack.png" alt="">
@@ -208,6 +231,7 @@
                 </div>
               </div>
               <p class="st">Global Copyright Register</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time7">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -215,6 +239,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/appcoins.png" alt="">
@@ -225,6 +250,7 @@
                 </div>
               </div>
               <p class="st">App Store Protocol</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time8">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -232,6 +258,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/envion.png" alt="">
@@ -242,6 +269,7 @@
                 </div>
               </div>
               <p class="st">Blockchain Infrastructure</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time9">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -249,6 +277,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/skarat.png" alt="">
@@ -259,6 +288,7 @@
                 </div>
               </div>
               <p class="st">The Skara Universe</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time10">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -268,6 +298,7 @@
         <div class="row py-4">
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -278,6 +309,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time11">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -285,6 +317,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -295,6 +328,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time12">
                 <img src="img/time.png" alt="" class="m-auto img-fluid" >
               </div>
@@ -302,6 +336,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -312,6 +347,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time13">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -319,6 +355,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -329,6 +366,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0 " id="time14">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -338,6 +376,7 @@
         <div class="row py-4">
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -348,6 +387,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time15">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -355,6 +395,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -365,6 +406,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time16">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -372,6 +414,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -382,6 +425,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time17">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
@@ -389,6 +433,7 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <a href="#">
+            <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
                   <img src="img/sale.png" alt="">
@@ -399,6 +444,7 @@
                 </div>
               </div>
               <p class="st">Some text here</p>
+              </div>
               <div class="text-center pt-1 time mb-5 mb-md-0" id="time18">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>

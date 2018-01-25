@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<%- include menu %>
+  <!-- <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,9 +27,6 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/news">News <span class="sr-only">(current)</span></a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="html_pages/news.html">Blog</a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="/advertise">Advertise</a>
               </li>
@@ -45,59 +43,65 @@
         
         </div>
       </nav>
-    </header>
+    </header> -->
 
 
 <div class="container-fluid" style="background-color: #e8ecee;">
 <div class="container wrapper">
   <section class="maincontent">
   <article class="articlesection">
-    <img src="https://www.coinschedule.com/blog/wp-content/uploads/2017/12/Bitcoin-Cash.png" width="100%"/>
-    <h1>Behind Bitcoin Cash’s Stellar Rise</h1>
+    <img src="http://localhost:3000/<%=data.img%>" width="100%"/>
+    <h4 class="headline"><b><%=data.title%></b></h4>
+    <%if(data.createdat){
+      var options = {  
+        weekday: "long", year: "numeric", month: "short",  
+        day: "numeric", hour: "2-digit", minute: "2-digit"  
+      }; 
+
+      var s = new Date(data.createdat);
+      var newdate= s.toLocaleTimeString("en-us", options);
+     
+     %>
     <div class="entry-meta postmeta">
-    <span class="meta-date">Posted on19 December 2017</span><span class="meta-author"> by <span class="author vcard"><a class="url fn n" href="https://www.coinschedule.com/blog/author/alex/" title="View all posts by Alex Buelau" rel="author">Alex Buelau</a></span></span>
+      
+    <span class="meta-date"><%=newdate%></span>
     </div>
+    <%}%>
+    
+    
+    <!-- <p>The sentiment shifts that take place during hard forks in bitcoin, cryptocurrency’s banner asset, are a new market dynamic with far-reaching implications for the industry. While hard forks have resulted in little tangible success for other coins, bitcoin’s notoriety casts any hard fork in a more sentimental light. Markets first witnessed this curious market movement in the months following bitcoin cash’s fork in August. The fork itself seemed to justify its price, which has steadily risen since.</p> -->
+    <!-- <h4 class="headline"><b>Cash by the forkland</b></h4> -->
+    <p><%-data.body%></p>
+    
 
-    <div>
-      <p><i>DISCLAIMER: This is a guest post, the information provided in this post is the responsibility of the writer.</i></p>
-    </div>
-    <hr >
-    <p>The sentiment shifts that take place during hard forks in bitcoin, cryptocurrency’s banner asset, are a new market dynamic with far-reaching implications for the industry. While hard forks have resulted in little tangible success for other coins, bitcoin’s notoriety casts any hard fork in a more sentimental light. Markets first witnessed this curious market movement in the months following bitcoin cash’s fork in August. The fork itself seemed to justify its price, which has steadily risen since.</p>
-    <p><b>Cash by the forkland</b></p>
-    <p>The sentiment shifts that take place during hard forks in bitcoin, cryptocurrency’s banner asset, are a new market dynamic with far-reaching implications for the industry. While hard forks have resulted in little tangible success for other coins, bitcoin’s notoriety casts any hard fork in a more sentimental light. Markets first witnessed this curious market movement in the months following bitcoin cash’s fork in August. The fork itself seemed to justify its price, which has steadily risen since.</p>
-    <p>The sentiment shifts that take place during hard forks in bitcoin, cryptocurrency’s banner asset, are a new market dynamic with far-reaching implications for the industry. While hard forks have resulted in little tangible success for other coins, bitcoin’s notoriety casts any hard fork in a more sentimental light. Markets first witnessed this curious market movement in the months following bitcoin cash’s fork in August. The fork itself seemed to justify its price, which has steadily risen since.</p>
-    <p>The sentiment shifts that take place during hard forks in bitcoin, cryptocurrency’s banner asset, are a new market dynamic with far-reaching implications for the industry. While hard forks have resulted in little tangible success for other coins, bitcoin’s notoriety casts any hard fork in a more sentimental light. Markets first witnessed this curious market movement in the months following bitcoin cash’s fork in August. The fork itself seemed to justify its price, which has steadily risen since.</p>
-
-    <div class="authorbio">
+    <!-- <div class="authorbio">
       <div id="sab-author"><a href="#" title="Alex Buelau" target="_blank">Alex Buelau</a></div>
       <div id="sab-gravatar"><a rel="nofollow" href="https://www.coinschedule.com/blog/author/alex/" target="_blank">
       <img alt="Alex Buelau" src="../img/author.png" height="100" width="100"></a></div>
       <div class="sab-description">
       <p>While hard forks have resulted in little tangible success for other coins, bitcoin’s notoriety casts any hard fork in a more sentimental light. Markets first witnessed this curious market movement in the months following bitcoin cash’s fork in August. The fork itself seemed to justify its price, which has steadily risen since.</p></div>
       <div class="clear"></div>
-    </div>
+    </div> -->
     <div class="clear"></div>
   </article>
 
   </section>
   <section class="tags">
-  <article class="rightpart1">
+  <!-- <article class="rightpart1">
     <input type="search" class="search-field" placeholder="To search, type and hit enter …" value="" name="s">
-  </article>
-  <article class="rightpart2">
+  </article> -->
+  <!-- <article class="rightpart2">
     <p style="margin-bottom:0px">Go to <a>Link</a></p>
-  </article>
+  </article> -->
   <article class="rightpart3">
   <div class="innerpart">
     <h4>Categories</h4>
     <hr >
     <ul>
-      <li>Articles</li>
-       <li>Guest Posts</li>
-        <li>ICO Spotlight</li>
-         <li>Press Release</li>
-          <li>Standard Articles</li>
-          <li>Uncategorized</li>
+      <%if(data.tags){
+        data.tags.forEach(function(dt){%>
+      <li><%=dt%></li>
+    <%});}%>
     </ul>
     </div>
   </article>
@@ -110,63 +114,9 @@
 
 
         <footer>
-      <div class="container-fluid py-2">
-        <!-- class="list-inline-item" -->
-        <div class="container">
-        <div class="row">
-<div class="col-md-2 mt-3">
-            <!-- <ul class="list-inline m-0 text-md-left text-center">
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Disclaimer</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-            </ul> -->
-          </div>
-          <div class="col-md-4 mt-3 text-center">
-          <h2>Shortcuts</h2>
-            <ul class="list-inline m-0 text-md-left text-center">
-              <li class="text-center" style="padding:5px;"><a href="#">Website</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">Home</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">About</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">Submit Entry</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">Advertise</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 mt-3 text-center">
-          <h2>Terms & Conditions</h2>
-            <ul class="list-inline m-0 text-md-left text-center">
-              <li class="text-center" style="padding:5px;"><a href="#">Terms</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">Disclaimer</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">Privacy Policy</a></li>
-              <li class="text-center" style="padding:5px;"><a href="#">Cookie Policy</a></li>
-            </ul>
-          </div>
-          <div class="col-md-2 mt-3">
-            <!-- <ul class="list-inline m-0 text-md-left text-center">
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Disclaimer</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-            </ul> -->
-          </div>
-        </div>
-        </div>
-         <div class="col-md-12">
-          <div class="col-md-6 floater"><p class="text-left">*All rights reserved www.sample.com 2018 </p></div>
-          <div class="col-md-6 text-right floater">
-             <ul class="socialicons list-inline m-0 text-right pr-2">
-              <li class="list-inline-item"><a href="#"><img src="img/skype.png"></i></a></li>
-              <li class="list-inline-item"><a href="#"><img src="img/tel.png"></i></a></li>
-              <li class="list-inline-item"><a href="#"><img src="img/twit.png"></i></a></li>
-              <li class="list-inline-item"><a href="#"><img src="img/fb.png"></i></a></li>
-              <li class="list-inline-item"><a href="#"><img src="img/reddit.png"></i></a></li>
-            </ul>
-          </div>
-          <div style="clear:both"></div>
-        </div>
-      </div>
+  <%- include footer %>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="../js/menu.js"></script>
+   <%/*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/menu.js"></script>*/%>
     </body>
     </html>

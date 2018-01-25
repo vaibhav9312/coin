@@ -1,0 +1,1 @@
+$("#advertise").addClass("hello");

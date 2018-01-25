@@ -1,0 +1,32 @@
+.advancesubmit{padding-bottom:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
+.infovalue .form-control{margin-bottom:0px !important;}
+.panel-heading{    background-color: #f7f9fa;position:relative}
+.infoitem h4{font-size:20px}
+.token{color:#6a6c6f}
+.inline{display:inline-block;vertical-align: middle;}
+.infoitem{    padding: 7px 0 7px 5px;
+    border-top: 1px solid #eeeeee}
+    .infolabel{font-weight: 700;
+    width: 240px;
+    vertical-align: top;color:#6a6c6f;
+    font-family: 'D';}
+    .infovalue{    vertical-align: top;}
+/* .col-md-4{float:left}
+.col-md-2{float:left;padding-top:10px;padding-left:20px;} */
+.formcontainer{border:1px solid #ddd;border-radius:10px;margin-bottom:30px;}
+.teamhtag{font-size:18px;font-family: 'C';}
+.addmember{margin-top:20px;background-color:#5bc0de;border:1px solid #5bc0de;color:white;cursor:pointer;}
+.next{margin-left:20px;background-color:#34495e;}
+.back{background-color:#34495e;}
+.formhandler{border:1px solid #eee;overflow:hidden;border-radius:10px;background-color:white;margin-bottom:30px;}
+.teamheading{padding:5px;padding-left:30px;}
+.fa-times{position:absolute;right:10px;top:10px;cursor:pointer;}
+.panel{margin-top:30px;}
+/* .panel h2{padding-left:30px;color:#6a6c6f;font-family: 'C';} */
+.asterisk{color:red}
+.marginadjust{margin-top:10px;margin-bottom:10px;border-top:1px solid #ddd}
+.marginadjust h4{word-break:break-all;}
+.marginadjusthead{margin-top:10px;margin-bottom:10px;}
+
+
+.teamcontainer{margin-bottom:30px;border:1px solid #ddd;border-radius:10px;}

@@ -1,0 +1,45 @@
+.newtable{border-collapse: collapse; width: 100%;}
+.tablecontainer{width:100%}
+@media screen and (max-width:600px){
+    tbody{width:100%;}
+    .table.newtable tr,.table.newtable td{display:block;word-break:break-word;}
+  table.newtable th{
+    display:none;
+  }
+  table.newtable td:nth-child(1):before{
+    content: 'Name';
+
+  }
+  table.newtable td:nth-child(2):before{
+    content: 'Address';
+   
+  }
+  table.newtable td:nth-child(3):before{
+    content: 'Contact';
+  
+  }
+ 
+  table.newtable td{
+    display:block;
+  }
+table.newtable tbody tr{  margin-bottom:20px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);}
+
+
+  table.newtable td:nth-child(1),
+  table.newtable td:nth-child(2),
+  table.newtable td:nth-child(3){
+    padding-left: 30%;
+  }
+
+   table.newtable td:nth-child(1):before,
+  table.newtable td:nth-child(2):before,
+  table.newtable td:nth-child(3):before{
+    position: absolute;
+    left: 40px;
+    font-weight: bold;
+  }
+  
+
+}
+.viewdetails{background-color:#1fb5ad;color:white}

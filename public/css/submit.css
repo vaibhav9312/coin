@@ -1,0 +1,20 @@
+@font-face{
+
+	src: url(../fonts/OregonLDOBlack.ttf);
+	font-family: 'C';
+	src: url(../fonts/OregonLDOLight.ttf);
+	font-family: 'D';
+	
+}
+.nextbutton{font-family: 'D';color: #666666;}
+.submitform{padding-bottom:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
+.asterisk{color:red;}
+.inputtag{margin-bottom:0px;}
+.tagline{color:#6a6c6f}
+.checkbox{    position: relative;
+    display: block;
+    margin-top: 10px;}
+    .checkbox input   {position: absolute;
+    }
+    .verificationinfo{padding-left:20px;margin-top:2px;display:block;padding-top:2px;}
+  

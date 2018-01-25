@@ -1,5 +1,15 @@
+@font-face{
+
+	src: url(../fonts/OregonLDOBlack.ttf);
+	font-family: 'C';
+	src: url(../fonts/OregonLDO.ttf);
+	font-family: 'D';
+}
+
 header{border-bottom:1px solid #eeeeee;}
-.individual{padding-top:20px;}
+.individual{padding-top:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
+.container-fluid{padding-left:0px;padding-right:0px;}
+.project-heading{padding-top:50px;font-family: 'C';}
 .project-logo{padding: 0 10px 5px 0;}
 .inline{display:inline-block;vertical-align: middle;}
 .project-desc{padding: 19px;
@@ -7,7 +17,8 @@ header{border-bottom:1px solid #eeeeee;}
     border-radius: 4px;
     max-width: 800px;
     display: block;
-    margin: auto;}
+    margin: auto;
+    font-family: 'C';}
  .projectinfo{max-width: 1200px;
     margin: 0 auto;
     margin-top: 20px;
@@ -16,12 +27,13 @@ header{border-bottom:1px solid #eeeeee;}
     border-top: 1px solid #ddd;}
     .infolabel{font-weight: 700;
     width: 240px;
-    vertical-align: top;color:#6a6c6f;}
+    vertical-align: top;color:#6a6c6f;
+    font-family: 'D';}
     .infovalue{    vertical-align: top;}
 
  .crowdfund{margin-top: 40px;}
  .crowdfund h2{color: #34495e;
-    font-size: 2em;}
+    font-size: 2em;font-family: 'C'}
  .infoitem .date{width:250px;}
  #endclock, #startclock{font-family: sans-serif;
     color: #fff;
@@ -60,40 +72,45 @@ header{border-bottom:1px solid #eeeeee;}
     font-size: 12px;
 }
 .infodetails{color:#6a6c6f;}
-.paragraph{margin-bottom:0px;}
+.paragraph{font-family: 'D';}
 .crowdfund-distro{margin-top: 40px;}
 .project-links{margin-top:40px;}
 .project-links h2{    color: #34495e;
     font-size: 1.5em;}
 .proj-link img{margin-right: 5px;}
-.proj-link a{text-decoration:none;margin-right:50px;}
+.proj-link a{text-decoration:none;margin-right:50px;font-family: 'D';}
 .project-team{margin-top:40px;}
 .project-team h2{color: #34495e;
     font-size: 1.5em;}
  .project-team table th, td{    padding: 10px 10px 10px 0;
     border-bottom: 1px solid #ddd}
  .comment-policy .title{    font-size: 20px;
-    color: #494e58;
-    margin-bottom: 15px;    font-weight: 700;}
-    .comment-policy{    margin-bottom: 25px;
+    color: rgb(255, 120, 0);
+    margin-bottom: 15px;
+     font-weight: 700;}
+    .comment-policy{
     color: #656c7a;
-    background-color: #e7e9ee;
-    border-color: #c2c6cc;
+    background-color: white;
+   
     font-size: 16px;
     width: 100%;
     line-height: 1.45em;
     flex-grow: 0;
     background-position: right 20px top 20px;
-    border: 1px solid #c2c9d4;
-    border-radius: 4px;
+   
+    font-family: 'C';
     position: relative;
     overflow: hidden;
     margin-top: 10px;}
     .comment-policy .content{position: relative;
     z-index: 1;}
  .padding-double{padding:20px;}
-
+.distrotable{font-family: 'C';}
  .floater{float:left;}
  @media screen and (max-width:767px){
         .floater p{text-align:center !important;}
     }
+
+
+
+    
