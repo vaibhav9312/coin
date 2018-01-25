@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "ICO Project (coincontents)",
   "main": "server.js",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
