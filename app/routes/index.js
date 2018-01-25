@@ -58,7 +58,7 @@ module.exports=() => {
         
           res.render('index',{user:req.query.user.fname});
         }else{
-           res.render('index',{user:req.query.user.fname});
+           res.render('index',{user:req.session.user.fname});
         }
       }
     },
@@ -90,7 +90,7 @@ module.exports=() => {
           }
         },
         '/news-admin':(req,res) =>{
-          if (req.user&&req.session.user) {
+          if (!req.user&&!req.session.user) {
           if(req.query.save){
             res.render('news_admin',{save:true});
           }else{
