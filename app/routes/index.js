@@ -53,11 +53,12 @@ module.exports=() => {
            res.render('index',{user:false});
         }
       }else{
+        
         if(req.query.user){
         
-          res.render('index',{user:req.query.user});
+          res.render('index',{user:req.query.user.fname});
         }else{
-           res.render('index',{user:req.query.user});
+           res.render('index',{user:req.query.user.fname});
         }
       }
     },
@@ -215,16 +216,16 @@ module.exports=() => {
           }
         });
       },
-      'clientlogin':(req, res)=>{
+      '/clientlogin':(req, res)=>{
           db.collection('users').findOne({email:req.body.email,password:req.body.password},function(err,result){
             res.redirect('/login');
           });
       },
-      'userregister':(req, res)=>{
+      '/userregister':(req, res)=>{
+        
         var code=uuid();
         db.collection('users').insert({fname:req.body.fname,lname:req.body.lname,mobile:req.body.mobile,email:req.body.email,password:req.body.password,emailvarify:0,varificationcode:code},function(err,result){
           res.redirect('/login');
-          
          //console.log(result);
          
      
@@ -296,7 +297,7 @@ module.exports=() => {
      
         });
     },
-    'maindata':(req, res)=>{
+    '/maindata':(req, res)=>{
       db.collection('userevent').update({_id:ObjectId(req.body.id)},{$set:{pro_website:req.body.project_website,
         startdate:req.body.startdate,
         enddte:req.body.enddate,
