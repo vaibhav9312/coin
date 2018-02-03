@@ -350,7 +350,7 @@ module.exports=() => {
              from: 'CoinContents Team<vaibhav@squarepixelstudios.net>',
              to: req.body.email,
              subject: 'Email Verification',
-             html:'<H3>Hello:"'+req.body.name+'"</H3><br><p>This mail for Email Verification for your Account('+req.body.email+') in CoinContents.</p><p>Kindly Click on The link For Verification</p><br><a href="http://coincontents.herokuapp.com/emailvari?code='+code+"&id="+result.ops[0]._id+'">click here fo verification</a>"' 
+             html:'<H3>Hello:"'+req.body.fname+'"</H3><br><p>This mail for Email Verification for your Account('+req.body.email+') in CoinContents.</p><p>Kindly Click on The link For Verification</p><br><a href="http://coincontents.herokuapp.com/emailvari?code='+code+"&id="+result.ops[0]._id+'">click here fo verification</a>"' 
              };
              
              transporter.sendMail(mailOptions, function(error, info){
