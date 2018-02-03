@@ -320,18 +320,20 @@ module.exports=() => {
      
      
              var transporter = nodemailer.createTransport({
-             service: 'gmail',
+             host:'smtp.zoho.com',
+  port:465,
+  secure:true,
              auth: {
-               user: 'rahulworks273@gmail.com',
-               pass: 'rahulwork273@'
+ user: 'vaibhav@squarepixelstudios.net',
+     pass: 'qwerty123'
              }
              });
              
              var mailOptions = {
-             from: 'rahulworks273@gmail.com',
+             from: 'CoinContents Team',
              to: req.body.email,
              subject: 'Sending Email using Node.js',
-             html:'<H3>hello:"'+req.body.name+'"</H3><br><p>Go To Given link For Varification</p><br><a href="http://192.168.100:3000/emailvari?code='+code+"&id="+result.ops[0]._id+'">click here fo varification</a>"' 
+             html:'<H3>hello:"'+req.body.name+'"</H3><br><p>Go To Given link For Varification</p><br><a href="http://coinscontents.herokuapp.com/emailvari?code='+code+"&id="+result.ops[0]._id+'">click here fo varification</a>"' 
              };
              
              transporter.sendMail(mailOptions, function(error, info){
