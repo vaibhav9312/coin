@@ -59,12 +59,12 @@
     <div class="form-group"><input type="text" name="fname" class="form-control" placeholder="firstname" value="" required></div>
     <div class="form-group"><input type="text" name="lname" class="form-control" placeholder="Lastname" value="" required></div>
     <!-- <div class="form-group"><input type="number" name="mobile" class="form-control" placeholder="Mobile" value="" required></div> -->
-    <div class="form-group"><input type="email" name="email" class="form-control" placeholder="Email" value="" required></div>
-    <div class="form-group"><input type="password" name="password" onkeyup="special(this.value)" class="form-control" placeholder="Password" required>
-      <span id="text" style="color:red"><b>Text</b></span><br>
+    <div class="form-group"><input type="email" name="email" onchange="emailcheck(this.value)" class="form-control" placeholder="Email" value="" required></div>
+    <div class="form-group"><input type="password" name="password"  class="form-control" placeholder="Password" required>
+      <!-- <span id="text" style="color:red"><b>Text</b></span><br>
       <span id="special" style="color:red"><b>Special Charecter</b></span><br>
       <span id="number" style="color:red"><b>Number</b></span><br>
-      <span id="minn" style="color:red"><b>minimum length 7</b></span>
+      <span id="minn" style="color:red"><b>minimum length 7</b></span> -->
     <p></p>
   </div>
 
@@ -179,5 +179,22 @@
       $('#butnvalid').prop('disabled',true)
     }
   
+    }
+    function emailcheck(a){
+     
+      $.ajax({
+        type:"POST",
+        url: "/check-mail?email="+a,
+        success: function(result){
+          console.log(result);
+          if(result.email==a){
+            alert('Email Address entered is already register');
+            $('#butnvalid').attr('disabled','disabled');
+          }else{
+            $('#butnvalid').removeAttr('disabled');
+          }
+          
+    }
+      });
     }
 </script>

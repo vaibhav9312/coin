@@ -96,7 +96,7 @@ app.post('/clientlogin',coin.router);
 app.post('/userregister',coin.router);
 app.post('/maindata',coin.router);
 app.post('/approve',coin.router);
-
+app.post('/check-mail',coin.router);
 
 var uploadRouter = require('./app/routes/uploder')();
 app.use('/file/', uploadRouter);

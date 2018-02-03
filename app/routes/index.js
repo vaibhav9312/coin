@@ -30,16 +30,16 @@ var readHTMLFile = function(path, callback) {
 		}
 	});
   };
-  var transporter = nodemailer.createTransport({
-	// host: '',
-	// port: 465,
-	// secure:true,
-	service: 'gmail',
-	auth: {
-		user: 'rahulworks273@gmail.com',
-		pass: 'rahulwork273@'
-	}
-  });
+  // var transporter = nodemailer.createTransport({
+	// // host: '',
+	// // port: 465,
+	// // secure:true,
+	// service: 'gmail',
+	// auth: {
+	// 	user: 'rahulworks273@gmail.com',
+	// 	pass: 'rahulwork273@'
+	// }
+  // });
 
 module.exports=() => {
 
@@ -141,13 +141,22 @@ module.exports=() => {
         '/login':(req,res) =>{
           if(req.query.invalid){
             if(!req.user&&!req.session.user){
-            res.render('login',{user:false,login:false,invalid:true});
-            }else{res.render('login',{user:req.session.user.fname,login:true,invalid:true});}
-          }else{
+            res.render('login',{user:false,login:false,invalid:true,register:false});
+            }else{res.render('login',{user:req.session.user.fname,login:true,invalid:true,register:false});}
+          }
+          if(req.query.register){
             if(!req.user&&!req.session.user){
-            res.render('login',{login:false,user:false,invalid:false});
+              res.render('login',{user:false,login:false,invalid:false,register:true});
+              }else{res.render('login',{user:req.session.user.fname,login:true,invalid:false,register:true});}
+          }
+          else{
+            if(!req.user&&!req.session.user){
+            res.render('login',{login:false,user:false,invalid:false,register:false});
             }else{
-              res.render('login',{login:true,user:req.session.user.fname,invalid:false});
+             
+                res.render('login',{login:true,user:req.session.user.fname,invalid:false,register:false});
+              
+              
             }
           }
         },
@@ -268,11 +277,19 @@ module.exports=() => {
             res.redirect('/login');
           });
       },
+      '/check-mail':(req,res)=>{
+       
+        db.collection('users').findOne({email:req.query.email},function(err,result){
+          if(err)throw err;
+          
+          res.send(result);
+        });
+      },
       '/userregister':(req, res)=>{
         
         var code=uuid();
         db.collection('users').insert({fname:req.body.fname,lname:req.body.lname,mobile:req.body.mobile,email:req.body.email,password:req.body.password,emailvarify:0,varificationcode:code},function(err,result){
-          res.redirect('/login');
+          res.redirect('/login?register=true');
          //console.log(result);
          
      
@@ -330,10 +347,10 @@ module.exports=() => {
              });
              
              var mailOptions = {
-             from: 'CoinContents Team',
+             from: 'CoinContents Team<vaibhav@squarepixelstudios.net>',
              to: req.body.email,
-             subject: 'Sending Email using Node.js',
-             html:'<H3>hello:"'+req.body.name+'"</H3><br><p>Go To Given link For Varification</p><br><a href="http://coinscontents.herokuapp.com/emailvari?code='+code+"&id="+result.ops[0]._id+'">click here fo varification</a>"' 
+             subject: 'Email Verification',
+             html:'<H3>Hello:"'+req.body.name+'"</H3><br><p>This mail for Email Verification for your Account('+req.body.email+') in CoinContents.</p><p>Kindly Click on The link For Verification</p><br><a href="http://coincontents.herokuapp.com/emailvari?code='+code+"&id="+result.ops[0]._id+'">click here fo verification</a>"' 
              };
              
              transporter.sendMail(mailOptions, function(error, info){

@@ -26,6 +26,24 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="mymod1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+        <h3>An Email has been sent to your account.Kindly Verify your Email and then login.</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <!-- 
@@ -117,3 +135,8 @@
   
       </script>
     <%}%>
+    <%if(register){%>
+      <script>
+        $("#mymod1").modal('show');
+        </script>
+      <%}%>
