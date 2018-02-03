@@ -65,31 +65,31 @@ The Jibrel Network provides traditional financial assets, such as currencies, co
 <div class="projectinfo">
   <div class="infoitem">
     <div class="infolabel inline">Project Type</div>
-    <div class="infovalue inline">Token</div>
+    <div class="infovalue inline"><%=ind.project_type%></div>
   </div>
   <div class="infoitem">
     <div class="infolabel inline">Platform</div>
-    <div class="infovalue inline">Ethereum</div>
+    <div class="infovalue inline"><%=ind.platform%></div>
   </div>
   <div class="infoitem">
     <div class="infolabel inline">Website</div>
-    <div class="infovalue inline">Open</div>
+    <div class="infovalue inline"><%=ind.pro_website%></div>
   </div>
   <div class="infoitem">
     <div class="infolabel inline">Category</div>
-    <div class="infovalue inline">Finance</div>
+    <div class="infovalue inline"><%=ind.project_category%></div>
   </div>
   <div class="infoitem">
     <div class="infolabel inline">Total Supply</div>
-    <div class="infovalue inline">20000000</div>
+    <div class="infovalue inline"><%=ind.totalsupply%></div>
   </div>
   <div class="infoitem">
     <div class="infolabel inline">Whitepaper</div>
-    <div class="infovalue inline">Open</div>
+    <div class="infovalue inline"><%=ind.whitepapper%></div>
   </div>
   <div class="infoitem">
     <div class="infolabel inline">Bitcoin Talk</div>
-    <div class="infovalue inline">Open</div>
+    <div class="infovalue inline"><%=ind.btcannounce%></div>
   </div>
 
 <div class="crowdfund">
@@ -172,42 +172,59 @@ The Jibrel Network provides currencies, equities, commodities and other financia
 
 <div class="project-links">
   <h2>Links</h2>
+ 
   <div class="infoitem">
+  <%if(ind.pro_website){%>
     <div class="proj-link inline">
     <img src="../img/earth.png" width="16px" height="16px" />
-    <a>Website</a>
+    <a href="<%=ind.pro_website%>">Website</a>
     </div>
+    <%}%>
+    <%if(ind.whitepapper){%>
     <div class="proj-link inline">
     <img src="../img/paper.png" width="16px" height="16px" />
-    <a>Paper</a>
-    </div>  
+    <a href="<%=ind.whitepapper%>">Paper</a>
+    </div>
+    <%}%>
+    <%if(ind.btcannounce){%>
     <div class="proj-link inline">
     <img src="../img/announce.png" width="16px" height="16px" />
-    <a>Announce</a>
+    <a href="<%=ind.btcannounce%>">Announce</a>
     </div> 
-    <div class="proj-link inline">
+    <%}%>
+    
+    <!-- <div class="proj-link inline">
     <img src="../img/github.png" width="16px" height="16px" />
-    <a>Github</a>
-    </div> 
-    <div class="proj-link inline">
+    <a href="">Github</a>
+    </div> -->
+   
+    
+    <!-- <div class="proj-link inline">
     <img src="../img/blog.png" width="16px" height="16px" />
     <a>Blog</a>
-    </div> 
-    <div class="proj-link inline">
-    <img src="../img/twitter.png" width="16px" height="16px" />
-    <a>Twitter</a>
-    </div> <div class="proj-link inline">
-    <img src="../img/reddit_small.png" width="16px" height="16px" />
-    <a>Reddit</a>
-    </div> 
+    </div>  -->
+    <%if(ind.twiter){%>
+      <div class="proj-link inline">
+      <img src="../img/twitter.png" width="16px" height="16px" />
+      <a href="<%=ind.twiter%>">Twitter</a>
+      </div>
+    <%}%>
+    <%if(ind.reddit){%>
+      <div class="proj-link inline">
+      <img src="../img/reddit_small.png" width="16px" height="16px" />
+      <a href="<%=ind.reddit%>">Reddit</a>
+      </div> 
+    <%}%>
+    <%if(ind.slack){%>
     <div class="proj-link inline">
     <img src="../img/slack.png" width="16px" height="16px" />
-    <a>Slack</a>
+    <a href="<%=ind.slack%>">Slack</a>
     </div>
-    <div class="proj-link inline">
+    <%}%>
+    <!-- <div class="proj-link inline">
     <img src="../img/telegram.png" width="16px" height="16px" />
     <a>Telegram</a>
-    </div> 
+    </div>  -->
   </div>
 </div>
 
@@ -223,13 +240,16 @@ The Jibrel Network provides currencies, equities, commodities and other financia
     </tr>
     </thead>
     <tbody>
+      <%if(ind.team){
+        ind.team.forEach(function(men){       
+        %>
     <tr>
-    <td>Yazan Barghuthi</td>
-    <td>Co-founder, Project Lead</td>
-    <td>40.00%</td>
-    
+    <td><%=men.fullname%></td>
+    <td><%=men.position%></td>
+    <td><a href="<%=men.linkdin%>">Linkedin</a></td>
     </tr>
-    <tr>
+  <%});}%>
+    <!-- <tr>
     <td>Yazan Barghuthi</td>
     <td>Co-founder, Project Lead</td>
     <td>40.00%</td>
@@ -241,13 +261,13 @@ The Jibrel Network provides currencies, equities, commodities and other financia
     <td>Co-founder, Project Lead</td>
     <td>40.00%</td>
     
-    </tr>
+    </tr> -->
 
     </tbody></table>
   </div>
 </div>
 
-<div class="project-team">
+<!-- <div class="project-team">
 <h2>Upcoming Events And Milestones</h2>
   <div class="infodetails">
     <table class="distrotable">
@@ -275,7 +295,7 @@ The Jibrel Network provides currencies, equities, commodities and other financia
 
     </tbody></table>
   </div>
-</div>
+</div> -->
 </div>
 </div>
 <div id="comment-policy" class="comment-policy padding-double">

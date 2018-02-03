@@ -95,149 +95,64 @@
       <h3 class="font-weight-bold pl-md-5 pl-1" style="color:rgb(255, 120, 0)">Grade A Token Sales</h3>
       <div class="container">
         <div class="row py-4">
-          <div class="col-md-4">
-            <a href="https://apollodae.io">
+          <%if(grade){
+            grade.forEach(function(dat){
+              if(dat.grade=='A'){
+              %>
+          <div class="col-md-4" style="margin-bottom:20px" >
+            <a href="/individualform?ind=<%=dat._id%>">
             <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
-                  <img src="img/apollo.jpeg" alt="">
+                  <img src="http://localhost:3000/<%=dat.logoimg%>" width="48px" height="48px" alt="">
                 </div>
                 <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>ApolloDAE</b></h4>
-                  <p class="small m-0">High-tech Digital Asset<br>Exchange. Creating the future<br>of crypto trading<br>Join the ICO</p></a>
+                  <h4><b><%=dat.event%></b></h4>
+                  <p class="small m-0"><%=dat.proinfo%></p>
                 </div>
               </div>
-              <p class="st">Digital Asset Exchange</p>
+              <p class="st"><%=dat.project_category%></p>
               </div>
-              <a href="html_pages/individualform.html"><div class="text-center pt-1 time mb-5 mb-md-0" id="time1">
-                <img src="img/time.png" alt="" class="m-auto img-fluid"></a>
+              <!-- <a href="html_pages/individualform.html"><div class="text-center pt-1 time mb-5 mb-md-0" id="time1">
+                <img src="img/time.png" alt="" class="m-auto img-fluid"></a> -->
+              </a>
               </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-            <div class="borderradius">
-              <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
-                <div class="">
-                  <img src="img/1655.png" alt="">
-                </div>
-                <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>WePower</b></h4>
-                  <p class="small m-0">WePower is a Blockchain-based <br>green energy trading platform<br>Green Revolution<br>Buy the tokens</p></a>
-                </div>
-              </div>
-              <p class="st">Green Energy Trading Platform</p>
-              </div>
-              <div class="text-center pt-1 time mb-5 mb-md-0" id="time2">
-                <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-            <div class="borderradius">
-              <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
-                <div class="">
-                  <img src="img/flux.png" alt="">
-                </div>
-                <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>FluxICO</b></h4>
-                  <p class="small m-0">Decentralized Gambling Ecosystem<br>Flux MVP<br>Let Everyone Earn<BR>Developers, Gamblers, Streamers</p></a>
-                </div>
-              </div>
-              <p class="st">Decentralized Gaming Ecosystem</p>
-              </div>
-              <div class="text-center pt-1 time mb-5 mb-md-0" id="time3">
-                <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div>
-            </a>
-          </div>
+            <%} });}%>
+          
+          
         </div>
-        <div class="row py-4">
-          <div class="col-md-4">
-            <a href="#">
-            <div class="borderradius">
-              <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
-                <div class="">
-                  <img src="img/letbet.png" alt="">
-                </div>
-                <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>LetBet</b></h4>
-                  <p class="small m-0">LetBet is an online gambling platform<br>that aims at providing a trustless,<br>borderess, secure, anonymous<br>and fast online gambling platform</p></a>
-                </div>
-              </div>
-              <p class="st">Online Gambling Platform</p>
-              </div>
-              <div class="text-center pt-1 time mb-5 mb-md-0" id="time4">
-                <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-            <div class="borderradius">
-              <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
-                <div class="">
-                  <img src="img/lucyd.jpeg" alt="">
-                </div>
-                <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>Lucyd</b></h4>
-                  <p class="small m-0">Lucyd is building next-gen<br> smartglasses on a decentralized<br>AR ecosystem. Lightweight,<br>Prescription-Ready Smartglasses</p></a>
-                </div>
-              </div>
-              <p class="st">Building Next-Gen Smartglasses</p>
-              </div>
-              <div class="text-center pt-1 time mb-5 mb-md-0" id="time5">
-                <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#">
-            <div class="borderradius">
-              <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
-                <div class="">
-                  <img src="img/medical.png" alt="">
-                </div>
-                <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>MedicalChain</b></h4>
-                  <p class="small m-0">Medicalchain uses blockchain the <br>technologyto securely store health<br> records and maintain a single<br> version of the truth.</p></a>
-                </div>
-              </div>
-              <p class="st">Electronic Health Records</p>
-              </div>
-              <div class="text-center pt-1 time mb-5 mb-md-0" id="time6">
-                <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div>
-            </a>
-          </div>
-        </div>
+       
       </div>
     </section>
     <section class="TOK TOK1 py-4">
       <h3 class="font-weight-bold pl-md-5 pl-1" style="color:rgb(255, 120, 0)">Grade B Token Sales</h3>
       <div class="container">
         <div class="row py-4">
-          <div class="col-md-3 col-sm-6">
-            <a href="#">
+            <%if(grade){
+              grade.forEach(function(dats){
+                if(dats.grade=='B'){
+                %>
+          <div class="col-md-3 col-sm-6" style="margin-bottom:20px">
+            <a href="/individualform?ind=<%=dats._id%>">
              <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
                 <div class="">
-                  <img src="img/copytrack.png" alt="">
+                  <img src="http://localhost:3000/<%=dats.logoimg%>" width="48px" height="48px" alt="">
                 </div>
                 <div class="tx text-center w-100">
-                  <a href="html_pages/individualform.html"><h4><b>Copytrack</b></h4>
-                  <p class="small m-0">At the core of COPYTRACK<br>is the creation of a global <br>decentralized copyright <br>register for digital content.</p></a>
+                  <h4><b><%=dats.event%></b></h4>
+                  <p class="small m-0"><%=dats.proinfo%></p>
                 </div>
               </div>
-              <p class="st">Global Copyright Register</p>
+              <p class="st"><%=dats.project_category%></p>
               </div>
-              <div class="text-center pt-1 time mb-5 mb-md-0" id="time7">
+              <!-- <div class="text-center pt-1 time mb-5 mb-md-0" id="time7">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div>
+              </div> -->
             </a>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <%} });}%>
+          <!-- <div class="col-md-3 col-sm-6">
             <a href="#">
             <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
@@ -255,8 +170,8 @@
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
             </a>
-          </div>
-          <div class="col-md-3 col-sm-6">
+          </div> -->
+          <!-- <div class="col-md-3 col-sm-6">
             <a href="#">
             <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
@@ -274,8 +189,8 @@
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
             </a>
-          </div>
-          <div class="col-md-3 col-sm-6">
+          </div> -->
+          <!-- <div class="col-md-3 col-sm-6">
             <a href="#">
             <div class="borderradius">
               <div class="bx d-flex flex-md-column flex-lg-row text-center justify-content-between">
@@ -293,9 +208,9 @@
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
               </div>
             </a>
-          </div>
+          </div> -->
         </div>
-        <div class="row py-4">
+        <!-- <div class="row py-4">
           <div class="col-md-3 col-sm-6">
             <a href="#">
             <div class="borderradius">
@@ -372,8 +287,8 @@
               </div>
             </a>
           </div>
-        </div>
-        <div class="row py-4">
+        </div> -->
+        <!-- <div class="row py-4">
           <div class="col-md-3 col-sm-6">
             <a href="#">
             <div class="borderradius">
@@ -450,7 +365,7 @@
               </div>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <footer>

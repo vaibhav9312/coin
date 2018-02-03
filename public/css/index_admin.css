@@ -2,6 +2,7 @@
 .tablecontainer{width:100%}
 @media screen and (max-width:600px){
     tbody{width:100%;}
+    .table-bordered{border:none !important}
     .table.newtable tr,.table.newtable td{display:block;word-break:break-word;}
   table.newtable th{
     display:none;
@@ -11,11 +12,15 @@
 
   }
   table.newtable td:nth-child(2):before{
-    content: 'Address';
+    content: 'Email';
    
   }
   table.newtable td:nth-child(3):before{
-    content: 'Contact';
+    content: 'Event Name';
+  
+  }
+  table.newtable td:nth-child(3):before{
+    content: 'Options';
   
   }
  
@@ -28,13 +33,15 @@ table.newtable tbody tr{  margin-bottom:20px;
 
   table.newtable td:nth-child(1),
   table.newtable td:nth-child(2),
-  table.newtable td:nth-child(3){
+  table.newtable td:nth-child(3),
+  table.newtable td:nth-child(4){
     padding-left: 30%;
   }
 
    table.newtable td:nth-child(1):before,
   table.newtable td:nth-child(2):before,
-  table.newtable td:nth-child(3):before{
+  table.newtable td:nth-child(3):before,
+  table.newtable td:nth-child(4):before{
     position: absolute;
     left: 40px;
     font-weight: bold;

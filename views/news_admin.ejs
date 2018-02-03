@@ -11,29 +11,28 @@
   <script type="text/javascript" src="js/widgEditor.js"></script>
                    <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
+          <section class="wrapper blogfluid">
               <div class="container-fluid">              
 <!-- ADD BLOG PAGE -->
-      <div class="container" style="border:1px solid #eee;width:100%;">
+      <div class="container blogcontainer" style="border:1px solid #eee;">
             <div class="row" style="height: auto;color: black;box-shadow: 0 0 11px rgba(33,33,33,.5);border-radius: 5px;" id="editsec">
                     <div class="tab-pane active" id="1">
-                    <h1 class="text-center">ADD A BLOG PAGE </h1>
+                    <h1 class="text-center blogtitle">ADD A BLOG PAGE </h1>
 
                     
                     <div class="col-md-12" style="margin-top: 30px;">
 
                         <form method="post" action="/blogdata" >
-                            <div class="col-md-2"></div>
-                    <div class="col-md-8">
+                           
                     
 
                     <div class="form-group marginadjust"> <!-- Full Name -->
-                        <label for="full_name_id" class="control-label">Title</label>
+                        <label for="full_name_id" class="control-label"><h4><b>Title</b></h4></label>
                         <input type="text" class="form-control" name="title"  placeholder="" required>
                     </div>  
             
                     <div class="form-group marginadjust" > <!-- Full Name -->
-                        <label for="full_name_id" class="control-label">Body</label>
+                        <label for="full_name_id" class="control-label"><h4><b>Body</b></h4></label>
                             <textarea id="noise" name="body" name="noise" class="widgEditor nothing"></textarea>
                       </div>  
 
@@ -45,29 +44,28 @@
           
 
             <div class="form-group marginadjust"> <!-- Full Name -->
-                <label for="full_name_id" class="control-label">Categories: (Categories should be separated by ",")</label>
+                <label for="full_name_id" class="control-label"><h4><b>Categories: (Categories should be separated by ",")</b></h4></label>
                 <input type="text" class="form-control" id="tagbg" name="tags" formControlName="blogtags" [ngClass]="{'error':!blogdata.controls['blogtags'].valid}" placeholder="" >
                 <option value=""></option>
             </div>  
            
 
             <div class="form-group marginadjust"> <!-- Full Name -->
-                <label for="full_name_id" class="control-label">Meta-Description: (not more than 150 characters)</label>
+                <label for="full_name_id" class="control-label"><h4><b>Meta-Description: (not more than 150 characters)</b></h4></label>
                 <input type="text" class="form-control" name="mdesc" id="descup"formControlName="blogmdesc" [ngClass]="{'error':!blogdata.controls['blogmdesc'].valid}"   />
             </div>
           
 
             <div class="card marginadjust">
-                    <label for="full_name_id" class="control-label">Image</label>
+                    <label for="full_name_id" class="control-label"><h4><b>Image</b></h4></label>
                     <div class="card-block marginadjust">
-                        <input type="file" id="filedata" accept="application/img" style="margin:0 auto;">
+                        <input type="file" id="filedata" accept="application/img">
                         
                     </div>
                 </div>
-            </div>
-            <div class="col-md-2"></div>
+            
             <input type="text" style="display:none" name="img" id="img1"/>
-            <!-- <button type="submit" id="blogsave"></button> -->
+            <button type="submit" style="display:none" id="blogsave"></button>
         </form>
             <div class="col-sm-12 text-center marginadjust">
                 <button type="submit" onclick="imgsave()" class="btn btn-info btn-lg " id="clo">Submit</button>

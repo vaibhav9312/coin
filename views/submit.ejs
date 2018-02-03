@@ -2,6 +2,11 @@
 <html lang="en">
 <%- include menu %>
 
+<%if(submit){%>
+  <script>
+    alert('your event detail success fully submited');
+  </script>
+<%}%>
 <div class="container-fluid advertisepart submitform">
  
     <div class="col-md-12 form-group">
@@ -17,7 +22,7 @@
       <div class="col-md-12 marginadjust">
         <div class="col-md-12" style="padding:0px;">
         <div><h4 class="formh4">Your Name<span class="asterisk">*</span></h4></div>
-        <div><input type="text" class="form-control inputtag" name="name" placeholder="Your Name" style="margin-bottom:0px"></div>
+        <div><input type="text" class="form-control inputtag" name="name" placeholder="Your Name" style="margin-bottom:0px" required></div>
         </div>
         <div class="col-md-12"></div>
       </div>
@@ -25,7 +30,7 @@
       <div class="col-md-12 marginadjust">
         <div class="col-md-12" style="padding:0px;">
        <div><h4 class="formh4">Your Email<span class="asterisk">*</span></h4></div>
-      <div><input type="email" class="form-control inputtag" name="email" value="<%=email%>" style="margin-bottom:0px"></div>
+      <div><input type="email" class="form-control inputtag" name="email" value="<%=email%>" style="margin-bottom:0px" required /></div>
         </div>
         <div class="col-md-12"></div>
       </div>
@@ -33,7 +38,7 @@
       <div class="col-md-12 marginadjust">
         <div class="col-md-12" style="padding:0px;">
        <div><h4 class="formh4">Your Event<span class="asterisk">*</span></h4></div>
-      <div><input type="text" class="form-control inputtag" id="inputtagemail" name="event" placeholder="Event" style="margin-bottom:0px">
+      <div><input type="text" class="form-control inputtag" id="inputtagemail" name="event" placeholder="Event" style="margin-bottom:0px" required />
        <span class="tagline">E.g. MyCompany ICO</span>
        </div>
      
@@ -44,7 +49,7 @@
       <div class="col-md-12 marginadjust">
       <div class="col-md-12" style="padding:0px;">
           <div><h4 class="formh4">Tell us about your project (this will be shown in your listing)</h4></div>
-       <div><textarea class="form-control inputtag" name="aboutpro" rows="10" id="comment" placeholder="More Information" style="margin-bottom:0px"></textarea>
+       <div><textarea class="form-control inputtag" maxlength="255" name="aboutpro" rows="10" id="comment" placeholder="More Information" style="margin-bottom:0px"></textarea>
        <span class="tagline">Maximun 256 characters</span>
        </div>
        </div>

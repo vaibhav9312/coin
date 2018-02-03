@@ -1,0 +1,49 @@
+<% include sidebar %>
+<section id="main-content">
+  <section>
+  <div class="container-fluid">
+  <div class="container approvetable">
+  <div class="approvenew">
+
+<table class="table table-bordered approvenew">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Event</th>
+      <th>Grade</th>
+    
+      
+    </tr>
+  </thead>
+  <tbody>
+<%if(data){
+  data.forEach(function(dat){%>
+  <tr class="marginaccept">
+    <td class="padder"><%=dat.name%></td>
+    <td class="padder"><%=dat.email%></td>
+    <td class="padder"><%=dat.event%></td>
+    <td class="padder"><%=dat.grade%></td>
+  </tr>
+<%});}%>
+  <!-- <tr>
+    <td class="padder">Rahul</td>
+    <td class="padder">abc9998521478@gmail.com</td>
+    <td class="padder">B</td>
+    
+  </tr>
+
+  <tr>
+    <td class="padder">Pardeep</td>
+    <td class="padder">abc9998521478@gmail.com</td>
+    <td class="padder">B</td>
+   
+   
+  </tr> -->
+  </tbody>
+</table>
+
+  </div>
+  </div>
+  </section>
+  </section>

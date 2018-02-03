@@ -47,8 +47,6 @@ app.use(session({
 }));
 
 
-
-
 //for mailing purpose 
 var readHTMLFile = function(path, callback) {
 	fs.readFile(path, {encoding: 'utf-8'}, function (err, html) {
@@ -86,6 +84,9 @@ app.get('/newdetails',coin.router);
 app.get('/register',coin.router);
 app.get('/emailvari',coin.router);
 app.get('/contactus',coin.router);
+app.get('/indexadmin',coin.router);
+app.get('/eventdetail',coin.router);
+app.get('/approvelist',coin.router);
 
 app.post('/adminlogin',coin.router);
 app.post('/blogdata',coin.router);
@@ -94,6 +95,7 @@ app.post('/session-access',coin.router);
 app.post('/clientlogin',coin.router);
 app.post('/userregister',coin.router);
 app.post('/maindata',coin.router);
+app.post('/approve',coin.router);
 
 
 var uploadRouter = require('./app/routes/uploder')();

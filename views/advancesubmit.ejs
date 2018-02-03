@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include menu %>
+
+
 <section>
 <div class="container-fluid advancesubmit">
  
   <div class="col-md-12">
-      <form class="form-signin" method="post" action="/maindata">
+      <form id="alldata" class="form-signin" method="post" action="/maindata" onsubmit="adding()">
       <h1 class="advertise submitheading">Submit Entry</h1>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Your Name</b></h4></div>
@@ -21,7 +23,7 @@
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Project Website<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="text" name="project_website" style="width:300px"><br>e.g.: http://www.google.com (please include http:// or https://)</div>
+        <div class="infovalue inline token"><input type="text" name="project_website" style="width:300px" required><br>e.g.: http://www.google.com (please include http:// or https://)</div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Dates not defined yet - TBA </b></h4></div>
@@ -29,16 +31,16 @@
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Start<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="date" id="start" name="startdate" style="width:300px"><span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
+        <div class="infovalue inline token"><input type="date" id="start" name="startdate" style="width:300px" required><span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>End<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="date" id="end" name="enddate" style="width:300px"><span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
+        <div class="infovalue inline token"><input type="date" id="end" name="enddate" style="width:300px" required><span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Project Category<span class="asterisk">*</span></b></h4></div>
         <div class="infovalue inline token">
-        <select style="width:300px" name="pcategory">
+        <select style="width:300px" name="pcategory" required>
         <option>Finance</option>
         <option>Mining</option>
         <option>Data Analyst</option>
@@ -48,33 +50,52 @@
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Project Type<span class="asterisk">*</span></b></h4></div>
         <div class="infovalue inline token">
-        <select style="width:300px" name="ptype">
+        <select style="width:300px" name="ptype" required>
         <option>Blockchain</option>
         <option>Asset/Token</option>
        
         </select></div>
       </div>
       <div class="infoitem">
-        <div class="infolabel inline"><h4><b>Platform</b></h4></div>
-        <div class="infovalue inline token"><select class="form-control selectbox" style="width:300px;margin-bottom:0px;"></select></div>
-      </div>
+          <div class="infolabel inline"><h4><b>Platform</b></h4></div>
+          <div class="infovalue inline token">
+          <select style="width:300px" name="platform" required>
+              <option>Blockchain</option>
+              <option>BitShare</option>
+              <option>Burst</option>
+              <option>Counterparty</option>
+              <option>Ethereum</option>
+              <option>Ethereum classic</option>
+              <option>Graphine</option>
+              <option>Komodo</option>
+              <option>NEM</option>
+              <option>NEO</option>
+              <option>NuBits</option>
+              <option>Nxt</option>
+              <option>Omni</option>
+              <option>Qtum</option>
+              <option>Stellar Lumens</option>
+              <option>Ubiq</option>
+              <option>Waves</option>
+         
+          </select></div>
+        </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Token/Coin Name<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="text" name="coinname" style="width:300px"><br>Maximum 255 charactrers</div>
+        <div class="infovalue inline token"><input type="text" name="coinname" maxlength="256" style="width:300px" required><br>Maximum 255 charactrers</div>
       </div>
 
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Symbol<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="text" name="symbol" style="width:300px"><span style="padding-left:10px;">Maximum 10 charactrers</span></div>
+        <div class="infovalue inline token"><input type="text" name="symbol" style="width:300px" maxlength="10" required><span style="padding-left:10px;">Maximum 10 charactrers</span></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Total Supply<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="text" name="tsupply" style="width:300px"><span style="padding-left:10px;">e.g.: 100000000.99</span></div>
+        <div class="infovalue inline token"><input type="number" name="tsupply" style="width:300px" required><span style="padding-left:10px;">e.g.: 100000000.99</span></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Link to logo<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="text" style="width:300px"><br>Maximum 255 charactrers<br><input type="file" id="logoimg" onchange="logoimg()" accept="image" /></div>
-        <input type="text" style="display:none" id="logopic" name="logopic"/>
+        <div class="infovalue inline token"><input type="text" name="logopic" id="logopic" style="width:300px" required><br><input type="file" id="logoimg" onchange="logoimg1()" accept="image" /></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Link to Whitepaper</b></h4></div>
@@ -96,10 +117,16 @@
         <div class="infolabel inline"><h4><b>Bitcointalk Announcement Thread</b></h4></div>
         <div class="infovalue inline token"><input type="text" name="btcannounce" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic</div>
       </div>
-      </form>
+      <!-- member data and id -->
+      <input type="text" style="display:none" id="mcount" name="mcount"/>
+
+      <input type="text" value="<%=id%>" name="id" style="display:none;">
+      <input type="text" id="members" name="members" style="display:none;">
+      <button id="jclick" type="submit" style="display:none"></button>
+      <!-- </form> -->
 <div class="panel">
 
-<form class="form-signin" id="memberform" method="post" action="/memberlist">
+<!-- <form class="form-signin" id="memberform" method="post" action="/memberlist"> -->
 <div class="formhandler">
 <div class="panel-heading">
 <h4 class="teamheading">Team Members</h4>
@@ -107,73 +134,81 @@
 </div>
 <div class="col-md-12">
 <div class="col-md-2"><h4 class="teamhtag">Full Name<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input type="text" id="fullname0" name="fullname" class="form-control" placeholder="Full Name"></div>
+<div class="col-md-4"><input type="text" id="fullname0" name="fullname" class="form-control" placeholder="Full Name" required></div>
 <div class="col-md-2"></div>
 <div class="clear"></div>
 </div>
 
 <div class="col-md-12">
 <div class="col-md-2"><h4 class="teamhtag">Picture<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input class="form-control" id="filedata0" onchange="submit1()" name="mpicture" type="file" accept="image, application/pdf" /></div>
+<div class="col-md-4"><input class="form-control" id="filedata0" onchange="submit1(0)" name="mpicture" type="file" accept="image" required/></div>
 <div class="col-md-2"></div><input type="text" style="display:none" id="profileimg0" name="profileimg" />
 <div class="clear"></div>
 </div>
 
 <div class="col-md-12">
 <div class="col-md-2"><h4 class="teamhtag">Position<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input type="text" name="position0" id="position0" class="form-control" placeholder="Position"></div>
+<div class="col-md-4"><input type="text" name="position0" id="position0" class="form-control" placeholder="Position" required></div>
 <div class="col-md-2"></div>
 <div class="clear"></div>
 </div>
 
-<div class="col-md-12">
+
+
+<div class="col-md-12" style="margin-bottom:10px">
 <div class="col-md-2"><h4 class="teamhtag">Short Bio<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input type="text" id="shortbio0" name="shortbio0" class="form-control" placeholder="Short Bio"></div>
+<div class="col-md-4"><textarea class="form-control inputtag" maxlength="256" name="shortbio0" name="aboutpro" rows="6" id="comment" placeholder="More Information" style="margin-bottom:0px" required></textarea></div>
 <div class="col-md-2"></div>
 <div class="clear"></div>
 </div>
 
 <div class="col-md-12">
 <div class="col-md-2"><h4 class="teamhtag">Linkedin</h4></div>
-<div class="col-md-4"><input type="text" id="linkdin0" name="linkedin0" class="form-control" placeholder="linkedin link"></div>
+<div class="col-md-4"><input type="text" id="linkdin0" name="linkdin0" class="form-control" placeholder="linkedin link"></div>
 <div class="col-md-2"></div>
 <div class="clear"></div>
 </div>
 
 <div class="col-md-12">
 <div class="col-md-2"><h4 class="teamhtag">Upload ID (Passport)</h4></div>
-<div class="col-md-4"><input class="form-control" id="passportid0" onchange="passport()" type="file" accept="image/png, application/pdf" /></div>
+<div class="col-md-4"><input class="form-control" id="passportid0" onchange="passport(0)" type="file" accept="image" /></div>
 <div class="col-md-2"></div><input type="text" style="display:none" id="passportimg0" name="passportimg" />
 <div class="clear"></div>
 </div>
 </div>
 </div>
-<input type="text" style="display:none" id="mcount" name="mcount"/>
 
-<input type="text" value="<%=id%>" name="id" style="display:none;">
-</form>
+
 </div>
-
-<button class="btn btn-lg nextbutton addmember" id="addmember"><b>Add Team Member</b></button><br>
+</form>
+<div class="btn btn-lg nextbutton addmember" id="addmember"><b>Add Team Member</b></div><br>
 <button class="btn btn-lg nextbutton addmember inline back"><b>BACK</b></button>
-<button class="btn btn-lg nextbutton addmember inline next"><b>NEXT-PAYMENT</b></button>
+<button class="btn btn-lg nextbutton addmember inline next" onclick="allmembers()" ><b>NEXT-PAYMENT</b></button>
+
+
 </div>
      
     <script>
-      function allmembers(b){
-        var a=b-1
-        var all=[];
+      var all=[];
+      function allmembers(){
+        all=[]
+        for(var a=0;a<=count;a++){
         var name=$('#fullname'+a+'').val();
         var img=$('#profileimg'+a+'').val();
         var position=$('#position'+a+'').val();
         var shortbio=$('#shortbio'+a+'').val();
         var linkdin=$('#linkdin'+a+'').val();
         var passport=$('#passportimg'+a+'').val();
-        var ty={fullname:name,pimg:img,position:position,short:shortbio,linkdin:linkdin,passport:passport}
-        console.log(ty);
+        var ty={fullname:name,pimg:img,position:position,short:shortbio,linkdin:linkdin,passport:passport};
+        all.push(ty);
+          if(count==a){
+            
+            var rr=JSON.stringify(all);
+            $('#members').val(rr);
+            $('#jclick').click();
+          }
+        }
       }
-
-
 
       function checkbox(){
         if($("#chek").prop('checked') == true){
@@ -181,20 +216,26 @@
           $("#chek").val("true");
           $("#start").prop("disabled",true);
           $("#end").prop("disabled",true);
+          //for removing required attribute
+          $("#start").removeAttr("required");
+          $("#end").removeAttr("required");
       }else{
         
         $("#chek").val("");
         $("#start").prop("disabled",false);
           $("#end").prop("disabled",false);
+          //for adding the required attribute
+          $("#start").attr("required",'');
+          $("#end").attr("required",'');
       }
       }
     </script>
   
   <script>
 
-    function submit1(){
+    function submit1(a){
       var data1 = new FormData();
-      var ty=$('#filedata').prop('files')[0];
+      var ty=$('#filedata'+a+'').prop('files')[0];
       data1.append('file',ty );
      
       $.ajax({
@@ -208,15 +249,15 @@
           success: function(data){
            
             var image = JSON.parse(data)[0].filename;
-          $('#profileimg0').val(image);
+          $('#profileimg'+a+'').val(image);
           }
           
       }); 
 };
 
-function passport(){
+function passport(a){
       var data1 = new FormData();
-      var ty=$('#passportid').prop('files')[0];
+      var ty=$('#passportid'+a+'').prop('files')[0];
       data1.append('file',ty );
       $.ajax({
           type: 'POST',               
@@ -228,12 +269,13 @@ function passport(){
           success: function(data){
             
             var image = JSON.parse(data)[0].filename;
-          $('#passportimg0').val(image);
+          $('#passportimg'+a+'').val(image);
           }
       }); 
 };
 
-function logoimg(){
+function logoimg1(){
+ 
       var data1 = new FormData();
       var ty=$('#logoimg').prop('files')[0];
       data1.append('file',ty );
@@ -247,10 +289,13 @@ function logoimg(){
           success: function(data){
             
             var image = JSON.parse(data)[0].filename;
+           
           $('#logopic').val(image);
           }
       }); 
 };
+
+
 
 </script>
 

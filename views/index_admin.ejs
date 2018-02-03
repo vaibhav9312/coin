@@ -5,7 +5,7 @@
   <div class="container tablecontainer">
   <div class="newtable">
 
-<!-- <table class="table table-bordered newtable">
+<table class="table table-bordered newtable">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,31 +16,33 @@
     </tr>
   </thead>
   <tbody>
-  <tr class="marginaccept">
-    <td class="padder">Nitin</td>
-    <td class="padder">abc9998521478@gmail.com</td>
-    <td class="padder">Colaba Market, Regal Cinema Metro Plaza McDonald cafe Building No:23</td>
-    <td class="padder"><a href="/advancedsubmitform"><button class="btn btn-lg viewdetails">View Details</button></a></td>
-  
-  </tr>
-
-  <tr>
+    <%if(events){
+      events.forEach(function(dat){
+        if(dat.status==1){
+        %>
+    <tr class="marginaccept">
+      <td class="padder"><%=dat.name%></td>
+      <td class="padder"><%=dat.email%></td>
+      <td class="padder"><%=dat.event%></td>
+      <td class="padder"><a href="/eventdetail?id=<%=dat._id%>" </a><button class="btn btn-lg viewdetails">View Details</button></a></td>
+    </tr>
+<%} });}%>
+  <!-- <tr>
     <td class="padder">Rahul</td>
     <td class="padder">abc9998521478@gmail.com</td>
     <td class="padder">Colaba Market, Regal Cinema Metro Plaza McDonald cafe Building No:23</td>
     <td class="padder"><a href="/advancedsubmitform"><button class="btn btn-lg viewdetails">View Details</button></a></td>
  
-  </tr>
-
+  </tr> bm 
   <tr>
     <td class="padder">Pardeep</td>
     <td class="padder">abc9998521478@gmail.com</td>
     <td class="padder">Colaba Market, Regal Cinema Metro Plaza McDonald cafe Building No:23</td>
     <td class="padder"><a href="/advancedsubmitform"><button class="btn btn-lg viewdetails">View Details</button></a></td>
    
-  </tr>
+  </tr> -->
   </tbody>
-</table> -->
+</table>
 
   </div>
   </div>

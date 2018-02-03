@@ -46,21 +46,19 @@ module.exports=() => {
   let routes={
   'get':{
     '/':(req,res)=>{
+      db.collection('userevent').find({status:2}).toArray(function(err,result){
       if (!req.user&&!req.session.user) {
-        if(req.query.user){
-          res.render('index',{user:false});
-        }else{
-           res.render('index',{user:false});
-        }
+          res.render('index',{user:false,grade:result});
+        
       }else{
-        
         if(req.query.user){
-        
-          res.render('index',{user:req.query.user.fname});
+       
+          res.render('index',{user:req.query.user,grade:result});
         }else{
-           res.render('index',{user:req.session.user.fname});
+           res.render('index',{user:false,grade:result});
         }
       }
+    });
     },
     
     '/news':(req,res) =>{
@@ -69,7 +67,7 @@ module.exports=() => {
         if (!req.user&&!req.session.user) {
           res.render('news',{user:false,news:result});
           }else{
-            res.render('news',{user:true,news:result});
+            res.render('news',{user:req.session.user.fname,news:result});
           }
       })
       },
@@ -78,12 +76,15 @@ module.exports=() => {
         if (!req.user&&!req.session.user) {
           res.redirect('login');
         }else{
-          
-          res.render('submit',{email:req.session.user.email,user:req.session.user.fname});
+          if(req.query.submit){
+            res.render('submit',{email:req.session.user.email,user:req.session.user.fname,submit:true});
+          }else{
+          res.render('submit',{email:req.session.user.email,user:req.session.user.fname,submit:false});
+          }
         }
       },
         '/admin':(req,res) =>{
-          if(req.query.invalid){
+          if(req.query.Ainvalid){
             res.render('login_admin',{invalid:true});
           }else{
             res.render('login_admin',{invalid:false});
@@ -91,17 +92,36 @@ module.exports=() => {
         },
         '/news-admin':(req,res) =>{
           if (!req.user&&!req.session.user) {
+            res.redirect('/admin');
+        }else{
           if(req.query.save){
             res.render('news_admin',{save:true});
           }else{
             res.render('news_admin',{save:false});
           }
-        }else{
-          res.redirect('/admin');
         }
         },
 
-        
+        '/indexadmin':(req,res) =>{
+          if (!req.user&&!req.session.user) {
+            res.redirect('/admin');
+          }else{
+            db.collection('userevent').find({}).toArray(function(err,result){
+              res.render('index_admin',{events:result});
+            });
+            
+          }
+        },
+        '/eventdetail':(req,res) =>{
+          if (!req.user&&!req.session.user) {
+            res.redirect('/admin');
+          }else{
+            db.collection('userevent').findOne({_id:ObjectId(req.query.id)},function(err,result){
+            
+              res.render('advancedsubmitform_admin',{single:result});
+            });
+          }
+        },
         
         '/logout':(req,res) =>{
           req.session.reset();
@@ -112,22 +132,22 @@ module.exports=() => {
         	res.redirect('/admin');
         },
         '/advertise':(req,res) =>{
-          if (!req.user&&!req.session.user) {
-            res.redirect('login');
-            }else{
-              res.render('advertise',{email:req.session.user.email,user:req.session.user.fname});
-            }
+         // if (!req.user&&!req.session.user) {
+           // res.redirect('login');
+            //}else{
+              res.render('advertise',{user:false});
+            //}
         },
         '/login':(req,res) =>{
           if(req.query.invalid){
             if(!req.user&&!req.session.user){
-            res.render('login',{user:false,login:false});
-            }else{res.render('login',{user:req.session.user,login:true});}
+            res.render('login',{user:false,login:false,invalid:true});
+            }else{res.render('login',{user:req.session.user.fname,login:true,invalid:true});}
           }else{
             if(!req.user&&!req.session.user){
-            res.render('login',{login:false,user:false});
+            res.render('login',{login:false,user:false,invalid:false});
             }else{
-              res.render('login',{login:true,user:req.session.user});
+              res.render('login',{login:true,user:req.session.user.fname,invalid:false});
             }
           }
         },
@@ -139,8 +159,23 @@ module.exports=() => {
             }
         },
         '/individualform':(req,res) =>{
-          res.render('individualform');
+          
+          db.collection('userevent').findOne({_id:ObjectId(req.query.ind)},function (err,result){
+          if (!req.user&&!req.session.user) {
+           
+            res.render('individualform',{user:false,ind:result});
+          }else{
+            res.render('individualform',{user:req.session.user.fname,ind:result});
+          }
+        });
         },
+
+        '/approvelist':(req,res) =>{
+          db.collection('userevent').find({status:2}).toArray(function(err,result){
+            res.render('approvedlist',{data:result});
+          });
+        },
+
         '/newdetails':(req,res) =>{
           db.collection('blog').findOne({_id:ObjectId(req.query.id)},function(err,result){
 
@@ -159,7 +194,7 @@ module.exports=() => {
           db.collection('users').findOne({_id:ObjectId(req.query.id)},function(err,result){
 	
             if(req.query.code==result.varificationcode){
-              db.collection('users').update({_id:ObjectId(req.query.id)},{emailvarify:1},function(err,result){
+              db.collection('users').update({_id:ObjectId(req.query.id)},{$set:{emailvarify:1}},function(err,result){
                 res.redirect('/login');
               });
             }
@@ -171,11 +206,14 @@ module.exports=() => {
     
       '/adminlogin':(req,res)=>{
       
-        if(req.body.email=='Admin'&&req.body.password=="Admin"){
-          res.render('index_admin');
-          req.session.user = req.body.email;
+        if(req.body.email=='Admin@gmail.com'&&req.body.password=="Admin"){
+         
+          var email= req.body.email;
+          req.session.user = email;
+            res.redirect('/indexadmin');
+         
         }else{
-          res.redirect('/admin?invalid=true');
+          res.redirect('/admin?Ainvalid=true');
         }
       },
       '/blogdata':(req,res) =>{
@@ -184,20 +222,29 @@ module.exports=() => {
           res.redirect('/news-admin?save=true')
         });
       },
+      '/approve':(req,res) =>{
+        db.collection('userevent').update({_id:ObjectId(req.body.id)},{$set:{status:2,grade:req.body.grade}},function(err,result){
+          res.redirect('/approvelist')
+        });
+      },
       '/eventform':(req,res) =>{
         if (!req.user&&!req.session.user) {
           res.redirect('login');
       }else{
-      
-        db.collection('userevent').insert({name:req.body.name,email:req.body.email,event:req.body.event,proinfo:req.body.aboutpro,crowdfund:req.body.crwfmember},function(err,result){
-          res.render('advancesubmit',{name:req.body.name,email:req.body.email,event:req.body.event,user:req.session.user.fname,id:result.ops[0]._id});
+          if(req.query.submit){
+            res.render('advancesubmit',{name:req.body.name,email:req.body.email,event:req.body.event,user:req.session.user.fname,id:result.ops[0]._id,submit:true});
+          }else{
+
+        db.collection('userevent').insert({name:req.body.name,email:req.body.email,event:req.body.event,proinfo:req.body.aboutpro,crowdfund:req.body.crwfmember,status:0},function(err,result){
+          res.render('advancesubmit',{name:req.body.name,email:req.body.email,event:req.body.event,user:req.session.user.fname,id:result.ops[0]._id,submit:false});
         });
+      }
       }
       },
 
       '/session-access':(req,res) =>{
         db.collection('users').findOne({email:req.body.email,password:req.body.password},function(err,result){
-		 
+          
           if(result){
      
            if(result.emailvarify==1){
@@ -298,10 +345,25 @@ module.exports=() => {
         });
     },
     '/maindata':(req, res)=>{
+
+      // var st= req.body.startdate.split('/');
+      // var et= req.body.enddate.split('/');
+      //   var d = new Date(st[0]+'/'+(st[1]+1)+'/'+st[2]);
+      //   var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+      //  var nd = new Date(utc + (3600000*0));
+      //  var dat= nd.getTime();
+
+      //  var d1 = new Date(et[0]+'/'+(et[1]+1)+'/'+et[2]);
+      //  var utc1 = d1.getTime() + (d1.getTimezoneOffset() * 60000);
+      //  var nd1 = new Date(utc1 + (3600000*0));
+      //  var dat1=nd1.getTime();
+
+      var team=JSON.parse(req.body.members);
       db.collection('userevent').update({_id:ObjectId(req.body.id)},{$set:{pro_website:req.body.project_website,
         startdate:req.body.startdate,
-        enddte:req.body.enddate,
+        enddate:req.body.enddate,
         project_category:req.body.pcategory,
+        tba:req.body.tba,
         project_type:req.body.ptype,
         coinname:req.body.coinname,
         symbol:req.body.symbol,
@@ -312,20 +374,12 @@ module.exports=() => {
         slack:req.body.slack,
         btcannounce:req.body.btcannounce,
         logoimg:req.body.logopic,
-        team:[]}},function(err,result){
-          for(var i=0;i<req.body.mcount;i++){
-            var name=req.body.fullname+i;
-            var picture=req.body.picture+i;
-            var position=req.body.position+i;
-            var shortbio=req.body.shortbio+i;
-            var linkdin=req.body.linkdin+i;
-            var passport=req.body.passport+i;
-            db.collection('userevent').update({_id:ObjectId(req.body.id)},{$push:{team:{fullname:name,picture:picture,position:position,shortbio:shortbio,linkdin:linkdin}}},function(err,result1){
-              console.log("success");
-            })
-          }
+        status:1,
+        platform:req.body.platform,
+        team:team}},function(err,result){
+         res.redirect('/submit?submit=true');
         });
-    
+
     }
       
   }

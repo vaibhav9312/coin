@@ -1,4 +1,28 @@
 <% include sidebar %>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">LOGO</h4>
+      </div>
+      <div class="modal-body">
+       <img id="modalimg" src="" width="100%" height="100%" alt="passpost image">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <section id="main-content">
   <section>
   <div class="container-fluid">
@@ -6,22 +30,22 @@
   <div class="col-md-12 marginadjusthead">
       <h1 class="advertise">Submit Entry</h1>
       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Your Name</b></h4></div>
-        <div class="col-md-6 token"><h4>abcd</h4></div>
+        <div class="col-md-6"><h4><b> Name</b></h4></div>
+        <div class="col-md-6 token"><h4><%=single.name%></h4></div>
       </div>
       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Your E-mail</b></h4></div>
-        <div class=" col-md-6 token"><h4>abc@gmail.com</h4></div>
+        <div class="col-md-6"><h4><b> E-mail</b></h4></div>
+        <div class=" col-md-6 token"><h4><%=single.email%></h4></div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Event Name</b></h4></div>
-        <div class=" col-md-6 token"><h4>hello</h4></div>
+        <div class=" col-md-6 token"><h4><%=single.event%></h4></div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Project Website<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>e.g.: http://www.google.com (please include http:// or https://)*/%>
-        <h4>hello</h4>
+        <h4><%=single.pro_website%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
@@ -35,14 +59,14 @@
         <div class="col-md-6"><h4><b>Start<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="date" style="width:300px"><span style="padding-left:10px;"><i>Please set time in UTC</i></span>*/%>
-        <h4>hello</h4>
+        <h4><%=single.startdate%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>End<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="date" style="width:300px"><span style="padding-left:10px;"><i>Please set time in UTC</i></span>*/%>
-        <h4>hello</h4>
+        <h4><%=single.enddate%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
@@ -54,7 +78,7 @@
         <option>Data Analyst</option>
         <option>Gambling</option>
         </select>*/%>
-        <h4>hello</h4>
+        <h4><%=single.project_category%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
@@ -65,21 +89,21 @@
         <option>Asset/text-center token</option>
        
         </select>*/%>
-        <h4>hello</h4>
+        <h4><%=single.project_type%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Platform</b></h4></div>
         <div class=" col-md-6 token">
         <%/*<select class="form-control selectbox" style="width:300px;margin-bottom:0px;"></select>*/%>
-        <h4>hello</h4>
+        <h4></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>text-center token/Coin Name<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>Maximum 255 charactrers*/%>
-        <h4>hello</h4>
+        <h4><%=single.coinname%></h4>
         </div>
       </div>
 
@@ -87,165 +111,181 @@
         <div class="col-md-6"><h4><b>Symbol<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><span style="padding-left:10px;">Maximum 10 charactrers</span>*/%>
-        <h4>hello</h4>
+        <h4><%=single.symbol%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Total Supply<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><span style="padding-left:10px;">e.g.: 100000000.99</span>*/%>
-        <h4>hello</h4>
+        <h4><%=single.totalsupply%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Link to logo<span class="asterisk">*</span></b></h4></div>
         <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>Maximum 255 charactrers<br><input type="file" accept="image/png, application/pdf" />*/%>
-        <h4>hello</h4>
+          <h4><a href="" data-toggle="modal" onclick="showimg('<%=single.logoimg%>')" data-target="#myModal"><button class="btn btn-lg viewdetails">View</button></a></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Link to Whitepaper</b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>e.g.: http://www.google.com/paper (please include http:// or https://)*/%>
-        <h4>hello</h4>
+        <h4><%=single.whitepapper%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Twitter</b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>e.g.: http://www.twitter.com/your-name (please include http:// or https://)*/%>
-        <h4>hello</h4>
+        <h4><%=single.twiter%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Reddit</b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>e.g.: http://www.reddit.com/r/your-name (please include http:// or https://)*/%>
-        <h4>hello</h4>
+        <h4><%=single.reddit%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Slack</b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>e.g.: https://your-team.slack.com*/%>
-        <h4>hello</h4>
+        <h4><%=single.slack%></h4>
         </div>
       </div>
       <div class="col-md-12 marginadjust">
         <div class="col-md-6"><h4><b>Bitcointalk Announcement Thread</b></h4></div>
         <div class=" col-md-6 token">
         <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>hello</h4>
+        <h4><%=single.btcannounce%></h4>
         </div>
       </div>
 
-<%/*<div class="panel">
-<h2>Team</h2>
-
-<div class="formhandler">
-<div class="panel-heading">
-<h4 class="teamheading">Team Members</h4>
-<span class="fa fa-times"></span>
-</div>
-<div class="col-md-12 marginadjust marginadjust">
-<div class="col-md-2"><h4 class="teamhtag">Full Name<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input type="text" class="form-control" placeholder="Full Name"></div>
-<div class="col-md-2"></div>
-
-</div>
-
-<div class="col-md-12 marginadjust marginadjust">
-<div class="col-md-2"><h4 class="teamhtag">Picture<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input class="form-control" type="file" accept="image/png, application/pdf" /></div>
-<div class="col-md-2"></div>
-
-</div>
-
-<div class="col-md-12 marginadjust marginadjust">
-<div class="col-md-2"><h4 class="teamhtag">Position<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input type="text" class="form-control" placeholder="Position"></div>
-<div class="col-md-2"></div>
-
-</div>
-
-<div class="col-md-12 marginadjust marginadjust">
-<div class="col-md-2"><h4 class="teamhtag">Short Bio<span class="asterisk">*</span></h4></div>
-<div class="col-md-4"><input type="text" class="form-control" placeholder="Short Bio"></div>
-<div class="col-md-2"></div>
-
-</div>
-
-<div class="col-md-12 marginadjust marginadjust">
-<div class="col-md-2"><h4 class="teamhtag">Linkedin</h4></div>
-<div class="col-md-4"><input type="text" class="form-control" placeholder="linkedin link"></div>
-<div class="col-md-2"></div>
-
-</div>
-
-<div class="col-md-12 marginadjust marginadjust">
-<div class="col-md-2"><h4 class="teamhtag">Upload ID (Passport)</h4></div>
-<div class="col-md-4"><input class="form-control" type="file" accept="image/png, application/pdf" /></div>
-<div class="col-md-2"></div>
-
-</div>
-</div>
-</div>
-
-<button class="btn btn-lg nextbutton addmember" id="addmember"><b>Add Team Member</b></button>
-<div>
-<button class="btn btn-lg nextbutton addmember col-md-6 back"><b>BACK</b></button>
-<button class="btn btn-lg nextbutton addmember col-md-6 next"><b>NEXT-PAYMENT</b></button>
-</div>*/%>
 </div>
 
 </div>
-<div class="container teamcontainer">
-<h2>Team Members</h2>
- <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Full Name</b></h4></div>
-        <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>Rahul Gupta</h4>
-        </div>
+
+
+
+<div class="container newtestimonial">
+  <div class="slideshow-container">
+    <%if(single.team){
+      single.team.forEach(function(data){%>
+  
+   
+  <div class="mySlides">
+    <div class="profilepicimage"><img src="http://localhost:3000/<%=data.pimg%>" width="100%" height="100%"/></div>
+        <h2 class="slider__caption"><%=data.fullname%></h2>
+        <h4 class="slider__caption"><%=data.position%></h4>
+         <h4 class="slider__caption"><%=data.linkdin%></h4>
+        <p class="text-center"><%=data.short%></p>
+         <a href="" data-toggle="modal" onclick="showimg('<%=data.passport%>')" data-target="#myModal"><button class="btn btn-lg viewdetails">View Passport</button></a>
+  </div>
+  <%});}%>
+  <!-- <div class="mySlides">
+    <div class="profilepicimage"></div>
+        <h2 class="slider__caption">Rakesh Sharma</h2>
+        <h4 class="slider__caption">Senior Advisor</h4>
+         <h4 class="slider__caption">Rakesh@linkedin</h4>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+        <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-lg viewdetails">View Passport</button></a>
+  </div>
+  
+  <div class="mySlides">
+   <div class="profilepicimage"></div>
+        <h2 class="slider__caption">Kunal mehra</h2>
+        <h4 class="slider__caption">Senior Developer</h4>
+            <h4 class="slider__caption">Kunal@linkedin</h4>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+     <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-lg viewdetails">View Passport</button></a>
+  </div> -->
+  
+  <a class="prevslide" onclick="plusSlides(-1)">❮</a>
+  <a class="nextslide" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  
+  <div class="dot-container">
+    <!-- <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span>  -->
+  </div>
+  </div>
+    <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
+
+<script>
+  function showimg(a){
+$('#modalimg').attr('src','http://localhost:3000/'+a+'');
+
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+<div class="container text-center" style="padding-top:20px;padding-bottom:40px;">
+  <form action="/approve" method="post">
+    <div class="col-md-12 form-group">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+          <select name="grade" class="form-control" onchange="approv()">
+              <option value="">None</option>
+              <option value="A">Grade A</option>
+              <option value="B">Grade B</option>
+              <option value="C">Grade C</option>
+              <option value="D">Grade D</option>
+            </select>
       </div>
-       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Picture</b></h4></div>
-        <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>hello</h4>
-        </div>
-      </div>
-       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Position</b></h4></div>
-        <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>Senior Developer</h4>
-        </div>
-      </div>
-       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Short Bio</b></h4></div>
-        <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>hello</h4>
-        </div>
-      </div>
-       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Linkedin</b></h4></div>
-        <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>hello</h4>
-        </div>
-      </div>
-       <div class="col-md-12 marginadjust">
-        <div class="col-md-6"><h4><b>Upload ID (Passport)</b></h4></div>
-        <div class=" col-md-6 token">
-        <%/*<input type="text" style="width:300px"><br>e.g.: https://bitcointalk.org/your-topic*/%>
-        <h4>hello</h4>
-        </div>
-      </div>
+      <div class="col-md-4"></div>
+      
+  </div>
+    
+    <input type="text" style="display:none" value="<%=single._id%>" name="id">
+  <button id="app" class="btn btn-success" disabled>Approve</button>
+</form>
+<div style="margin-top:10px">
+  <a href="/indexadmin"><button class="btn btn-danger">Decline</button></a>
 </div>
 </div>
-
   </section>
   </section>
+  <script>
+    function approv(){
+      $('#app').prop('disabled',false);
+    }
+  </script>

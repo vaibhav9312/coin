@@ -56,15 +56,34 @@
   
 
   <form method="post" action="/userregister">
-    <div class="form-group"><input type="text" name="fname" class="form-control" placeholder="firstname" value=""></div>
-    <div class="form-group"><input type="text" name="lname" class="form-control" placeholder="Lastname" value=""></div>
-    <div class="form-group"><input type="number" name="mobile" class="form-control" placeholder="Mobile" value=""></div>
-    <div class="form-group"><input type="email" name="email" class="form-control" placeholder="Email" value=""></div>
-    <div class="form-group"><input type="password" name="password" class="form-control" placeholder="Password"></div>
-    <div class="form-group"></div><input type="hidden" name="redirect" value=""><button class="submitbutton" name="submit" value="1" type="submit">Submit</button>
+    <div class="form-group"><input type="text" name="fname" class="form-control" placeholder="firstname" value="" required></div>
+    <div class="form-group"><input type="text" name="lname" class="form-control" placeholder="Lastname" value="" required></div>
+    <!-- <div class="form-group"><input type="number" name="mobile" class="form-control" placeholder="Mobile" value="" required></div> -->
+    <div class="form-group"><input type="email" name="email" class="form-control" placeholder="Email" value="" required></div>
+    <div class="form-group"><input type="password" name="password" onkeyup="special(this.value)" class="form-control" placeholder="Password" required>
+      <span id="text" style="color:red"><b>Text</b></span><br>
+      <span id="special" style="color:red"><b>Special Charecter</b></span><br>
+      <span id="number" style="color:red"><b>Number</b></span><br>
+      <span id="minn" style="color:red"><b>minimum length 7</b></span>
+    <p></p>
+  </div>
+
+
+    <div class="form-group div-agree">
+        <label style="font-weight: normal">
+          <input type="checkbox" name="agree" id="agree"> Agree with the <a >terms &amp; conditions</a> and <a >disclaimer</a>
+        </label><br>
+        <!-- <span class="text-danger error-agree" style="display: none">Please agree to our terms, conditions and disclaimer</span> -->
+      </div>
+
+    <div class="form-group"></div><input type="hidden" name="redirect" value=""><button id="butnvalid" class="submitbutton" name="submit" value="1" type="submit" disabled>Submit</button>
     <div class="form-group"></div>
+
+    
+    <div class="form-group">
+      <a style="float: left;" href="/login">Already registered? Log in here...</a>
+    </div>
 </form>
-</div>
 </section>
 
         <footer>
@@ -124,3 +143,41 @@
 <script src="../js/menu.js"></script>
     </body>
     </html>
+<script>
+  function special(a){
+   
+    var Exp = /(([0-9]+[a-z]+)|([0-9]+))+[0-9]*$/;
+    
+    if(/[a-zA-Z]+$/.test(a)&&a!=''){butnvalid
+     $('#text').attr('style', 'color:green')
+      $('#butnvalid').prop('disabled',false)
+    }else{
+      $('#text').attr('style', 'color:red')
+      $('#butnvalid').prop('disabled',true)
+    }
+    if(a.match(Exp)){
+      $('#number').attr('style', 'color:green')
+      $('#butnvalid').prop('disabled',false)
+    }else{
+      $('#number').attr('style', 'color:red')
+      $('#butnvalid').prop('disabled',true)
+    }
+    
+    if(/^[a-zA-Z0-9]*$/.test(a) == false){
+      $('#special').attr('style', 'color:green')
+      $('#butnvalid').prop('disabled',false)
+    }else{
+      $('#special').attr('style', 'color:red')
+      $('#butnvalid').prop('disabled',true)
+    }
+    
+    if(a.length>=7){
+      $('#minn').attr('style', 'color:green')
+      $('#butnvalid').prop('disabled',false)
+    }else{
+      $('#minn').attr('style', 'color:red')
+      $('#butnvalid').prop('disabled',true)
+    }
+  
+    }
+</script>
