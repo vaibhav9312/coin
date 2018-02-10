@@ -1,4 +1,4 @@
-@font-face{
+/* @font-face{
 
 	src: url(/fonts/OregonLDOBlack.ttf);
     font-family: 'C';
@@ -8,9 +8,9 @@
     font-family: 'light';
     
    
-}
-.headline{padding-top:30px;color: #666;font-family: 'C';}
-.articlesection p{color: #666;  font-family: 'light';}
+} */
+.headline{padding-top:30px;color: #666;font-family: 'Roboto Condensed', sans-serif;}
+.articlesection p{color: #666;font-family: 'Roboto Condensed', sans-serif;}
 header{border-bottom:1px solid #eeeeee;}
 .wrapper{max-width: 1340px;
     width: 92%;
@@ -20,9 +20,9 @@ header{border-bottom:1px solid #eeeeee;}
 .tags{float:left;width:30%;padding-left:1em;padding-right:1em;padding-bottom:1em;}
 .rightpart1{padding:1em;padding-top:0px !important;}
 .rightpart2{padding:1em;}
-.rightpart2 p{padding:10px;background:white;border-radius:5px;font-family: 'light';color: #666;}
+.rightpart2 p{padding:10px;background:white;border-radius:5px;font-family: 'Roboto Condensed', sans-serif;color: #666;}
 .rightpart3{padding:1em;margin-bottom:30px;}
-.innerpart{padding:10px;background:white;border-radius:5px;font-family: 'light';color: #666;}
+.innerpart{padding:10px;background:white;border-radius:5px;font-family: 'Roboto Condensed', sans-serif;color: #666;}
 .search-field{display: inline-block;
     margin: 0;
     width: 100%;
@@ -36,7 +36,7 @@ header{border-bottom:1px solid #eeeeee;}
     box-sizing: border-box;
     -webkit-appearance: none;
     border-radius:5px;
-    font-family: 'light';
+    font-family: 'Roboto Condensed', sans-serif;
     color: #666;
 }
 
@@ -49,7 +49,7 @@ header{border-bottom:1px solid #eeeeee;}
     border-right-width: 0px;
     border-bottom-width: 20px;
     border-left-width: 0px;}
-#sab-author{    font-family: 'Open Sans', sans-serif;
+#sab-author{    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;

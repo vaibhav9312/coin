@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include menu %>
+<% include sidebar %>
+<style type="text/css" media="all">
+    @import "css/widgEditor.css";
+  </style>
 
+ 
+  
+  
+<section id="main-content">
+        <section class="wrapper blogfluid">
+            <!-- <div class="container-fluid">       -->
 
-<section>
 <div class="container-fluid advancesubmit">
+      
+        
  
   <div class="col-md-12">
-      <form id="alldata" class="form-signin" method="post" action="/maindata">
+      <form id="alldata" class="form-signin" method="post" action="/adminmaindata">
       <h1 class="advertise submitheading">Submit Entry</h1>
       <div class="infoitem">
-        <div class="infolabel inline"><h4><b>Your Name</b></h4></div>
-        <div class="infovalue inline token"><%=name%></div>
+        <div class="infolabel inline"><h4><b> Name</b></h4></div>
+        <div class="infovalue inline token"><input  name="name" type="text"></div>
       </div>
       <div class="infoitem">
-        <div class="infolabel inline"><h4><b>Your E-mail</b></h4></div>
-        <div class="infovalue inline token"><%=email%></div>
+        <div class="infolabel inline"><h4><b> E-mail</b></h4></div>
+        <div class="infovalue inline token"><input  name="email" type="email"></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Event Name</b></h4></div>
-        <div class="infovalue inline token"><%=event%></div>
+        <div class="infovalue inline token"><input  name="event" type="text"></div>
       </div>
+      <div class="col-md-12 marginadjust">
+            <div class="col-md-12" style="padding:0px;">
+                <div><h4 class="formh4">Tell us about your project (this will be shown in your listing)</h4></div>
+             <div><textarea class="form-control inputtag" maxlength="255" name="aboutpro" rows="10" id="comment" placeholder="More Information" style="margin-bottom:0px"></textarea>
+             <span class="tagline">Maximun 256 characters</span>
+             </div>
+             </div>
+              <div class="col-md-12"></div>
+            </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Project Website<span class="asterisk">*</span></b></h4></div>
         <div class="infovalue inline token"><input type="text" name="project_website" style="width:300px" required><br>e.g.: http://www.google.com (please include http:// or https://)</div>
@@ -120,11 +139,14 @@
       <!-- member data and id -->
       <input type="text" style="display:none" id="mcount" name="mcount"/>
 
-      <input type="text" value="<%=id%>" name="id" style="display:none;">
       <input type="text" id="members" name="members" style="display:none;">
       <button id="jclick" type="submit" style="display:none"></button>
+
+      
       <!-- </form> -->
 <div class="panel">
+
+        
 
 <!-- <form class="form-signin" id="memberform" method="post" action="/memberlist"> -->
 <div class="formhandler">
@@ -182,18 +204,20 @@
 </div>
 </form>
 <div class="btn btn-lg nextbutton addmember" id="addmember"><b>Add Team Member</b></div><br>
-<button class="btn btn-lg nextbutton addmember inline back"><b>BACK</b></button>
-<button class="btn btn-lg nextbutton addmember inline next" onclick="allmembers()" ><b>NEXT-PAYMENT</b></button>
+<!-- <button class="btn btn-lg nextbutton addmember inline back"><b>BACK</b></button> -->
+<button class="btn btn-lg nextbutton addmember inline next" onclick="allmembers()" ><b>Submit</b></button>
 
 
 </div>
      
+</section>
+</section>
+
     <script>
       var all=[];
       function allmembers(){
         all=[]
-       
-        for(var a=0;a<count;a++){
+        for(var a=0;a<=count;a++){
         var name=$('#fullname'+a+'').val();
         var img=$('#profileimg'+a+'').val();
         var position=$('#position'+a+'').val();
@@ -202,20 +226,18 @@
         var passport=$('#passportimg'+a+'').val();
         var ty={fullname:name,pimg:img,position:position,short:shortbio,linkdin:linkdin,passport:passport};
         all.push(ty);
-        
           if(count-1==a){
-            
             var rr=JSON.stringify(all);
             $('#members').val(rr);
-            
             $('#jclick').click();
           }
         }
       }
 
       function checkbox(){
+          console.log("helllo");
         if($("#chek").prop('checked') == true){
-          
+          console.log("true");
           $("#chek").val("true");
           $("#start").prop("disabled",true);
           $("#end").prop("disabled",true);
@@ -303,6 +325,7 @@ function logoimg1(){
 </script>
 
 
+
 </section>
 
         <footer>
@@ -312,4 +335,29 @@ function logoimg1(){
 <script src="js/menu.js"></script>*/%>
 <script src="js/advancesubmit.js"></script>
     </body>
-    </html>
+  
+
+
+
+
+
+
+  
+  
+  
+                   <!--main content start-->
+             
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+                       

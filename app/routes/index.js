@@ -71,6 +71,39 @@ module.exports=() => {
           }
       })
       },
+      '/detaildata':(req,res) =>{
+        if(req.query.id){
+          db.collection('userevent').findOne({_id:ObjectId(req.query.id)},function(err, result){
+          if(!req.user&&!req.session.user){
+            res.render('eventdetail',{id:req.query.id,user:false,data:result.event});
+          }else{
+            res.render('eventdetail',{id:req.query.id,user:req.session.user.fname,data:result.event});
+          }
+        })
+        }
+        },
+
+        '/admindetaildata':(req,res) =>{
+          if(req.query.id){
+            db.collection('userevent').findOne({_id:ObjectId(req.query.id)},function(err, result){
+            if(!req.user&&!req.session.user){
+              res.redirect('/login_admin');
+            }else{
+              res.render('eventdetail',{id:req.query.id,user:'Admin',data:result.event});
+            }
+          })
+          }
+          },
+
+        '/adminico':(req,res)=>{
+          if (!req.user&&!req.session.user) {
+            res.redirect('login_admin');
+          }else{
+          
+            res.render('adminico');
+          
+          }
+        },
     
       '/submit':(req,res)=>{
         if (!req.user&&!req.session.user) {
@@ -139,30 +172,42 @@ module.exports=() => {
             //}
         },
         '/login':(req,res) =>{
-          if(req.query.invalid){
-            if(!req.user&&!req.session.user){
-            res.render('login',{user:false,login:false,invalid:true,register:false});
-            }else{res.render('login',{user:req.session.user.fname,login:true,invalid:true,register:false});}
-          }
-          if(req.query.register){
-            if(!req.user&&!req.session.user){
-              res.render('login',{user:false,login:false,invalid:false,register:true});
-              }else{res.render('login',{user:req.session.user.fname,login:true,invalid:false,register:true});}
-          }
-          else{
-            if(!req.user&&!req.session.user){
-            res.render('login',{login:false,user:false,invalid:false,register:false});
-            }else{
-             
-                res.render('login',{login:true,user:req.session.user.fname,invalid:false,register:false});
-              
-              
+          // if(req.user&&req.session.user){
+          //   res.render('login',{user:req.session.user.fname,login:true,invalid:true,register:false});
+          // }else{
+
+            if(req.query.invalid){
+             if(!req.user&&!req.session.user){
+              res.render('login',{user:false,login:false,invalid:true,register:false});
+              }else{res.render('login',{user:req.session.user.fname,login:true,invalid:true,register:false});}
             }
-          }
+            if(req.query.register){
+              if(!req.user&&!req.session.user){
+                res.render('login',{user:false,login:false,invalid:false,register:true});
+               }else{res.render('login',{user:req.session.user.fname,login:true,invalid:false,register:true});}
+            }else{
+             if(!req.user&&!req.session.user){
+              res.render('login',{login:false,user:false,invalid:false,register:false});
+              }else{
+               
+                  res.render('login',{login:true,user:req.session.user.fname,invalid:false,register:false});
+                 
+              }
+            }
+
+          // }
+
+
+
+
+
+
+          
+          
         },
         '/contactus':(req,res) =>{
           if (!req.user&&!req.session.user) {
-            res.redirect('login');
+            res.render('contactus',{user:false});
             }else{
               res.render('contactus',{user:req.session.user.fname});
             }
@@ -170,6 +215,7 @@ module.exports=() => {
         '/individualform':(req,res) =>{
           
           db.collection('userevent').findOne({_id:ObjectId(req.query.ind)},function (err,result){
+           
           if (!req.user&&!req.session.user) {
            
             res.render('individualform',{user:false,ind:result});
@@ -231,6 +277,19 @@ module.exports=() => {
           res.redirect('/news-admin?save=true')
         });
       },
+      '/edeteil':(req,res) =>{
+       
+        db.collection('userevent').update({_id:ObjectId(req.body.id)},{$set:{detail:req.body.detail}},function(err,result){
+          if(req.session.user=='Admin@gmail.com'){
+            res.redirect('/eventdetail?id='+req.body.id);
+          }else{
+            res.redirect('/');
+          }
+          
+        });
+      },
+      
+
       '/approve':(req,res) =>{
         db.collection('userevent').update({_id:ObjectId(req.body.id)},{$set:{status:2,grade:req.body.grade}},function(err,result){
           res.redirect('/approvelist')
@@ -364,7 +423,7 @@ module.exports=() => {
         });
     },
     '/maindata':(req, res)=>{
-
+      //console.log(req.body);
       // var st= req.body.startdate.split('/');
       // var et= req.body.enddate.split('/');
       //   var d = new Date(st[0]+'/'+(st[1]+1)+'/'+st[2]);
@@ -378,6 +437,7 @@ module.exports=() => {
       //  var dat1=nd1.getTime();
 
       var team=JSON.parse(req.body.members);
+      
       db.collection('userevent').update({_id:ObjectId(req.body.id)},{$set:{pro_website:req.body.project_website,
         startdate:req.body.startdate,
         enddate:req.body.enddate,
@@ -396,7 +456,38 @@ module.exports=() => {
         status:1,
         platform:req.body.platform,
         team:team}},function(err,result){
-         res.redirect('/submit?submit=true');
+         res.redirect('/detaildata?id='+req.body.id);
+        });
+
+    },
+
+    '/adminmaindata':(req, res)=>{
+      
+      var team=JSON.parse(req.body.members);
+      db.collection('userevent').insert({pro_website:req.body.project_website,
+        name:req.body.name,
+        event:req.body.event,
+        email:req.body.email,
+        proinfo:req.body.aboutpro,
+        startdate:req.body.startdate,
+        enddate:req.body.enddate,
+        project_category:req.body.pcategory,
+        tba:req.body.tba,
+        project_type:req.body.ptype,
+        coinname:req.body.coinname,
+        symbol:req.body.symbol,
+        totalsupply:req.body.tsupply,
+        whitepapper:req.body.whitepaper,
+        twiter:req.body.twiter,
+        reddit:req.body.reddit,
+        slack:req.body.slack,
+        btcannounce:req.body.btcannounce,
+        logoimg:req.body.logopic,
+        status:1,
+        platform:req.body.platform,
+        team:team},function(err,result){
+          
+         res.redirect('/admindetaildata?id='+result.ops[0]._id);
         });
 
     }

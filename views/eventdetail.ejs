@@ -1,0 +1,81 @@
+<html lang="en">
+<%- include menu %>
+
+<head>
+        <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-reset.css" rel="stylesheet">
+        <link href="css/news_admin.css" rel="stylesheet">
+        </head>
+         
+
+                   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper blogfluid">
+              <div class="container-fluid">              
+<!-- ADD BLOG PAGE -->
+      <div class="container blogcontainer text-center" style="border:1px solid #eee;">
+            <div class="row" style="height: auto;color: black;box-shadow: 0 0 11px rgba(33,33,33,.5);border-radius: 5px;" id="editsec">
+                    <div class="tab-pane active" id="1">
+                    <h1 class="text-center blogtitle">Detail Of Event : <%=data%></h1>
+
+                    
+                    <div class="col-md-12" style="margin-top: 30px;">
+
+                        <form method="post" action="/edeteil" >
+                           
+                    
+                            <input type="text" style="display:none" name="id" value="<%=id%>" />
+                            <input type="text" style="display:none" name="detail" id="aaa" />
+                    
+            
+                    <div class="form-group marginadjust" > <!-- Full Name -->
+                        <label for="full_name_id" class="control-label"><h4><b>Event Detail</b></h4></label>
+                        <div id="summernote"></div>
+                      </div>  
+
+                      <div class="col-sm-12 text-center marginadjust" style="display:none">
+                            <button type="submit" class="btn btn-info btn-lg " id="dsave">Submit</button>
+                        </div>
+        </form>
+        
+        <button id="save" class="btn btn-primary" onclick="save()" type="button" >Submit</button>
+            
+            </div>
+                    </div>
+
+      </div>
+  
+    
+</div>
+
+
+</div>
+<script>
+      $('#summernote').summernote({
+       
+        tabsize: 2,
+        height: 200
+      });
+
+
+
+      var save = function() {
+    var markup = $('#summernote').summernote('code');
+    $('#summernote').summernote('destroy');
+    $('#aaa').val(markup);
+    $('#dsave').click();
+};
+    </script>
+
+</section>
+</section>
+<footer>
+        <%- include footer %>
+        </footer>
+
+        </html>
+
+
+
+
+                       

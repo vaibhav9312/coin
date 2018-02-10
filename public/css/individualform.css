@@ -1,15 +1,15 @@
-@font-face{
+/* @font-face{
 
 	src: url(../fonts/OregonLDOBlack.ttf);
 	font-family: 'C';
 	src: url(../fonts/OregonLDO.ttf);
 	font-family: 'D';
-}
+} */
 
 header{border-bottom:1px solid #eeeeee;}
 .individual{padding-top:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
-.container-fluid{padding-left:0px;padding-right:0px;}
-.project-heading{padding-top:50px;font-family: 'C';}
+
+.project-heading{padding-top:50px;font-family: 'Roboto Condensed', sans-serif;}
 .project-logo{padding: 0 10px 5px 0;}
 .inline{display:inline-block;vertical-align: middle;}
 .project-desc{padding: 19px;
@@ -18,7 +18,7 @@ header{border-bottom:1px solid #eeeeee;}
     max-width: 800px;
     display: block;
     margin: auto;
-    font-family: 'C';}
+    font-family: 'Roboto Condensed', sans-serif;}
  .projectinfo{max-width: 1200px;
     margin: 0 auto;
     margin-top: 20px;
@@ -28,14 +28,14 @@ header{border-bottom:1px solid #eeeeee;}
     .infolabel{font-weight: 700;
     width: 240px;
     vertical-align: top;color:#6a6c6f;
-    font-family: 'D';}
+    font-family: 'Roboto Condensed', sans-serif;}
     .infovalue{    vertical-align: top;}
 
  .crowdfund{margin-top: 40px;}
  .crowdfund h2{color: #34495e;
-    font-size: 2em;font-family: 'C'}
+    font-size: 2em;font-family: 'Roboto Condensed', sans-serif;}
  .infoitem .date{width:250px;}
- #endclock, #startclock{font-family: sans-serif;
+ #endclock, #startclock{font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
     display: inline-block;
     font-weight: 100;
@@ -72,13 +72,13 @@ header{border-bottom:1px solid #eeeeee;}
     font-size: 12px;
 }
 .infodetails{color:#6a6c6f;}
-.paragraph{font-family: 'D';}
+.paragraph{font-family: 'Roboto Condensed', sans-serif;}
 .crowdfund-distro{margin-top: 40px;}
 .project-links{margin-top:40px;}
 .project-links h2{    color: #34495e;
     font-size: 1.5em;}
 .proj-link img{margin-right: 5px;}
-.proj-link a{text-decoration:none;margin-right:50px;font-family: 'D';}
+.proj-link a{text-decoration:none;margin-right:50px;font-family: 'Roboto Condensed', sans-serif;}
 .project-team{margin-top:40px;}
 .project-team h2{color: #34495e;
     font-size: 1.5em;}
@@ -98,14 +98,14 @@ header{border-bottom:1px solid #eeeeee;}
     flex-grow: 0;
     background-position: right 20px top 20px;
    
-    font-family: 'C';
+    font-family: 'Roboto Condensed', sans-serif;
     position: relative;
     overflow: hidden;
     margin-top: 10px;}
     .comment-policy .content{position: relative;
     z-index: 1;}
  .padding-double{padding:20px;}
-.distrotable{font-family: 'C';}
+.distrotable{font-family: 'Roboto Condensed', sans-serif;}
  .floater{float:left;}
  @media screen and (max-width:767px){
         .floater p{text-align:center !important;}

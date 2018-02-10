@@ -1,6 +1,6 @@
 'use strict';
 
-const db=require('mongoskin').db('mongodb://coin:contents@ds115198.mlab.com:15198/coincontents');  
+const db=require('mongoskin').db('mongodb://192.168.0.111:27017/coin');  
 
 exports.fdata= function(){
 	return db;

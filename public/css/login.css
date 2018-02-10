@@ -1,14 +1,15 @@
-@font-face{
+
+/* @font-face{
 
 	src: url(../fonts/OregonLDOBlack.ttf);
 	font-family: 'C';
 	src: url(../fonts/OregonLDOLight.ttf);
 	font-family: 'D';
-}
+} */
 header{border-bottom:1px solid #eeeeee;}
 .floater{float:left;}
-.loginform{padding-top:100px;padding-bottom:30px;min-height:712px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
-.h1tag{color:#34495e;font-weight:700;font-size:2em;margin-bottom:20px;font-family: 'C';}
+.loginform{padding-top:100px;padding-bottom:30px;min-height:600px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
+.h1tag{color:#34495e;font-weight:700;font-size:2em;margin-bottom:20px;font-family: 'Roboto Condensed', sans-serif;}
 .btn-link-1 {
     display: block;
     width:200px;
@@ -28,7 +29,7 @@ header{border-bottom:1px solid #eeeeee;}
 .btn-link-1.btn-link-1-facebook{background: #3b5998;margin:0 auto;  margin-bottom:30px; border-radius:0px;}
 .btn-link-1.btn-link-1-google-plus{background: #dd4b39;margin:0 auto;margin-bottom:20px;border-radius:0px;}
 form{width: 100%;max-width: 700px;display: inline-block;margin-bottom: 15px;margin:0 auto;}
-  .submitbutton{border-radius:5px;font-family: 'C';}
+  .submitbutton{border-radius:5px;font-family: 'Roboto Condensed', sans-serif;}
   .form-group input{height:30px;}  
   .form-control{background-color:transparent;}
     .form-group a{color:#6a6c6f;}
