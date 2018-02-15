@@ -1,15 +1,15 @@
-@font-face{
+/* @font-face{
 
 	src: url(/fonts/OregonLDOBold.ttf);
     font-family: 'C';
     src: url(/fonts/OregonLDOCondensedBold.ttf);
     font-family: 'D';
    
-}
+} */
 header{border-bottom:1px solid #eeeeee;}
-.label{color:#666666;font-family: 'D';font-size:20px;font-weight:700;}
+.label{color:#666666;font-family: 'Roboto Condensed', sans-serif;font-size:20px;font-weight:700;}
 .contactform{padding-top:20px;min-height:600px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
-.h1tag{color:#666666 !important;font-weight:700;font-size:2em;margin-bottom:20px;font-family: 'C';}
+.h1tag{color:#666666 !important;font-weight:700;font-size:2em;margin-bottom:20px;font-family: 'Roboto Condensed', sans-serif;}
 .textareaformcontrol{margin-bottom:0px !important;}
 :focus {
     outline: 0;
@@ -27,7 +27,7 @@ form{width: 100%;max-width: 700px;display: inline-block;margin-bottom: 15px;marg
     padding: 7px 15px 7px 15px;
     font-size: 14px;
     cursor: pointer;}*/
-    .submitbutton{border-radius:5px;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;color:#666666; font-family: 'D';letter-spacing:1px;}
+    .submitbutton{border-radius:5px;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;color:#666666; font-family: 'Roboto Condensed', sans-serif;letter-spacing:1px;}
     .form-group a{color:#6666 !important;font-size:19px;}
     .floater{float:left;}
     .divspacing{margin-bottom:30px;}

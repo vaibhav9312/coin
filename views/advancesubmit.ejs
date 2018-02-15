@@ -7,7 +7,7 @@
 <div class="container-fluid advancesubmit">
  
   <div class="col-md-12">
-      <form id="alldata" class="form-signin" method="post" action="/maindata" onsubmit="adding()">
+      <form id="alldata" class="form-signin" method="post" action="/maindata">
       <h1 class="advertise submitheading">Submit Entry</h1>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Your Name</b></h4></div>
@@ -95,7 +95,7 @@
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Link to logo<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><!--<input type="text" name="logopic" id="logopic" style="width:300px" required>--><br><input type="file" id="logoimg" onchange="logoimg1()" accept="image" /></div>
+        <div class="infovalue inline token"><input type="text" name="logopic" id="logopic" style="width:300px;display:none" ><br><input type="file" id="logoimg" onchange="logoimg1()" accept="image" /></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Link to Whitepaper</b></h4></div>
@@ -192,7 +192,8 @@
       var all=[];
       function allmembers(){
         all=[]
-        for(var a=0;a<=count;a++){
+       
+        for(var a=0;a<count;a++){
         var name=$('#fullname'+a+'').val();
         var img=$('#profileimg'+a+'').val();
         var position=$('#position'+a+'').val();
@@ -201,10 +202,12 @@
         var passport=$('#passportimg'+a+'').val();
         var ty={fullname:name,pimg:img,position:position,short:shortbio,linkdin:linkdin,passport:passport};
         all.push(ty);
-          if(count==a){
+        
+          if(count-1==a){
             
             var rr=JSON.stringify(all);
             $('#members').val(rr);
+            
             $('#jclick').click();
           }
         }

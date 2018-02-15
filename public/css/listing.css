@@ -1,0 +1,89 @@
+.listingbutton{background-color:#33b13d;border-radius:25px;color:white}
+.listingcontainer{min-height:600px;padding-left:0px !important;padding-right:0px !important;}
+.listing{border-collapse: collapse; width: 100%;}
+.listing th{background-color:#34495e;color:white}
+.tablecontainer{width:100%}
+@media screen and (max-width:767px){
+    tbody{width:100%;}
+    .table-bordered{border:none !important}
+    .table.listing tr,.table.listing td{display:block;word-break:break-word;}
+  table.listing th{
+    display:none;
+  }
+  table.listing td:nth-child(1):before{
+    content: 'Sr No';
+
+  }
+  table.listing td:nth-child(2):before{
+    content: 'Name';
+   
+  }
+  table.listing td:nth-child(3):before{
+    content: 'Submit Event Name';
+  
+  }
+  table.listing td:nth-child(4):before{
+    content: 'Start';
+  
+  }
+
+  table.listing td:nth-child(5):before{
+    content: 'End';
+  
+  }
+
+  table.listing td:nth-child(6):before{
+    content: 'ICOrank';
+  
+  }
+
+  table.listing td:nth-child(7):before{
+    content: 'Status';
+  
+  }
+ 
+  table.listing td{
+    display:block;
+  }
+table.listing tbody tr{  margin-bottom:20px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);}
+
+
+  table.listing td:nth-child(1),
+  table.listing td:nth-child(2),
+  table.listing td:nth-child(3),
+  table.listing td:nth-child(4),
+  table.listing td:nth-child(5),
+  table.listing td:nth-child(6),
+  table.listing td:nth-child(7){
+    padding-left: 60%;
+  }
+
+   table.listing td:nth-child(1):before,
+  table.listing td:nth-child(2):before,
+  table.listing td:nth-child(3):before,
+  table.listing td:nth-child(4):before,
+  table.listing td:nth-child(5):before,
+  table.listing td:nth-child(6):before,
+  table.listing td:nth-child(7):before{
+    position: absolute;
+    left: 40px;
+    font-weight: bold;
+  }
+  
+
+}
+
+@media screen and (max-width:767px) and (min-width:600px){
+    table.listing td:nth-child(1):before,
+    table.listing td:nth-child(2):before,
+    table.listing td:nth-child(3):before,
+    table.listing td:nth-child(4):before,
+    table.listing td:nth-child(5):before,
+    table.listing td:nth-child(6):before,
+    table.listing td:nth-child(7):before{
+     
+      left: 135px;
+  
+    }
+}

@@ -1,12 +1,12 @@
-@font-face{
+/* @font-face{
 
 	src: url(../fonts/OregonLDOBlack.ttf);
 	font-family: 'C';
 	src: url(../fonts/OregonLDOLight.ttf);
 	font-family: 'D';
 	
-}
-.nextbutton{font-family: 'D';color: #666666;background-color:#34495e;color:white;}
+} */
+.nextbutton{font-family: 'Roboto Condensed', sans-serif;color: #666666;background-color:#34495e;color:white;}
 .submitform{padding-bottom:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
 .asterisk{color:red;}
 .inputtag{margin-bottom:0px;}

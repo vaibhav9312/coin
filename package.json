@@ -12,6 +12,7 @@
   "author": "vaibhav nigam",
   "license": "ISC",
   "dependencies": {
+    "bitcore-lib": "^0.15.0",
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.3",
     "dateformat": "^3.0.2",

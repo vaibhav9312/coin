@@ -2,3 +2,6 @@
 .mystyle{display:block !important;}
 .brand{background:none !important;}
 a.logo{margin:10px 0 0 0 !important;}
+@media screen and (max-width:767px){
+    .brand{background:#f1f2f7 !important;}
+}

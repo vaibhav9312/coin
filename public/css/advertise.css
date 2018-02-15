@@ -1,19 +1,19 @@
-@font-face{
+/* @font-face{
 
 	src: url(../fonts/OregonLDOBlack.ttf);
 	font-family: 'C';
 	src: url(../fonts/OregonLDOLight.ttf);
 	font-family: 'D';
 	
-}
+} */
 
 header{border-bottom:1px solid #eeeeee;}
 .advertisepart{padding-top:30px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
 .marginadjust{margin-bottom:20px;}
-.advertise{color:#666666;font-size:2em;font-weight:700;font-family: 'C';}
+.advertise{color:#666666;font-size:2em;font-weight:700;font-family: 'Roboto Condensed', sans-serif;}
 .note h6{color:#6a6c6f;}
 .note p{color:#666666;}
-.formh4{font-size:14px;color:#666666;font-weight:700;font-family: 'C';}
+.formh4{font-size:14px;color:#666666;font-weight:700;font-family: 'Roboto Condensed', sans-serif;}
 .redmark{color:red;}
 .form-group{border:1px solid #eeeeee;padding-top:30px;margin-bottom:0px;}
 .btn{font-size:14px;border-radius:5px;color:black;cursor:pointer;background-color:#f2f2f2;}
@@ -51,4 +51,4 @@ header{border-bottom:1px solid #eeeeee;}
     -webkit-transform:scale(0.7);
     transform-origin: center center;
     -webkit-transform-origin: center center;
-}}
+}}                                                                                                                             

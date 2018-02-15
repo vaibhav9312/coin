@@ -87,7 +87,14 @@ app.get('/contactus',coin.router);
 app.get('/indexadmin',coin.router);
 app.get('/eventdetail',coin.router);
 app.get('/approvelist',coin.router);
-
+app.get('/detaildata',coin.router);
+app.get('/adminico',coin.router);
+app.get('/admindetaildata',coin.router);
+app.get('/profile',coin.router);
+app.get('/listing',coin.router);
+app.get('/reset',coin.router);
+app.get('/events_admin',coin.router);
+app.get('/payment',coin.router);
 app.post('/adminlogin',coin.router);
 app.post('/blogdata',coin.router);
 app.post('/eventform',coin.router);
@@ -95,8 +102,11 @@ app.post('/session-access',coin.router);
 app.post('/clientlogin',coin.router);
 app.post('/userregister',coin.router);
 app.post('/maindata',coin.router);
+app.post('/adminmaindata',coin.router);
 app.post('/approve',coin.router);
+app.post('/edeteil',coin.router);
 app.post('/check-mail',coin.router);
+
 
 var uploadRouter = require('./app/routes/uploder')();
 app.use('/file/', uploadRouter);

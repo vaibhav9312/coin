@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include sidebar %>
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="container-fluid">
+                <div class="container eventcontainer text-center" style="border:1px solid #eee">
+                        <div class="row eventrow">
+                                <div class="col-md-12" id="1">
+                                <h1 class="text-center" style="font-size:35px;padding-top:20px;">Detail Of Event :</h1>
+            
+                                
+                                <div class="col-md-12" style="margin-top: 30px;">
+            
+                                    <form method="post" action="/edeteil">
+                                       
+                                
+                                        <input type="text" style="display:none" name="id" />
+                                        <input type="text" style="display:none" name="detail" id="aaa" />
+                                
+                        
+                                <div class="form-group marginadjust" > <!-- Full Name -->
+                                    <label for="full_name_id" class="control-label"><h1><b>Event Detail</b></h1></label>
+                                    <div id="summernote"></div>
+                                  </div>  
+            
+                                  <div class="col-sm-12 text-center marginadjust" style="display:none">
+                                        <button type="submit" class="btn btn-info btn-lg " id="dsave">Submit</button>
+                                    </div>
+                                </form>
+                    <br>
+                    <br>
+                    <button id="save" class="btn btn-lg eventbutton" onclick="save()" type="button" >Submit</button>
+                    <br>
+                    <br>
+                        </div>
+                                </div>
+            
+                  </div>
+              
+                
+            </div>
+        </div>
+        
+        </section>
+        </section>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+        <script>
+                $('#summernote').summernote({
+                 
+                  tabsize: 2,
+                  height: 200
+                });
+          
+          
+          
+                var save = function() {
+              var markup = $('#summernote').summernote('code');
+              $('#summernote').summernote('destroy');
+              $('#aaa').val(markup);
+              $('#dsave').click();
+          };
+              </script>
+     

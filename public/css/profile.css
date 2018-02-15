@@ -1,0 +1,8 @@
+.profileheading{color: #666666;
+    font-size: 2em;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;}
+.inputform{margin-bottom:20px}
+.profilebutton{background-color:#33b13d;border-radius:25px;color:white}
+.profilecontainer{padding-top:50px;padding-bottom:50px;min-height:600px;}
+.forgot{color:#383838}

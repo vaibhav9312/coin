@@ -11,7 +11,7 @@ html {
 body {
     color:#767676;
     background:#f1f2f7;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     padding:0px !important;
     margin:0px !important;
     font-size:13px;
@@ -69,7 +69,7 @@ a,a:hover,a:focus {
     font-size:18px;
     text-transform:uppercase;
     font-weight:300;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     border-bottom:10px solid #a0b87e;
 }
 .form-signin .checkbox {
@@ -79,7 +79,7 @@ a,a:hover,a:focus {
     font-weight:normal;
     color:#b6b6b6;
     font-weight:300;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .form-signin .form-control {
     position:relative;
@@ -106,7 +106,7 @@ a,a:hover,a:focus {
     color:#fff;
     text-transform:uppercase;
     font-weight:300;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     margin:20px 0 5px;
 }
 .form-signin p {
@@ -2107,11 +2107,11 @@ ul.inbox-pagination li {
 }
 .modal-header h4.modal-title {
     font-weight:300;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .modal-body label {
     font-weight:400;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .compose-mail {
@@ -3104,7 +3104,7 @@ input:focus:invalid:focus,textarea:focus:invalid:focus,select:focus:invalid:focu
     background:#41CAC0;
 }
 .daterangepicker .calendar th,.daterangepicker .calendar td {
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight:300;
     text-align:center;
     white-space:nowrap;
@@ -3819,7 +3819,7 @@ span.customSelect.changed {
     font-size:30px;
 }
 .rating span.star,.rating span.star {
-    font-family:FontAwesome;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight:normal;
     font-style:normal;
     display:inline-block;
@@ -3859,7 +3859,7 @@ span.customSelect.changed {
     margin:0;
     overflow:hidden;
     font-weight:normal;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 #headerLeft h2 {
     font-size:2.6em;
@@ -4169,7 +4169,7 @@ tr.odd.gradeX td.sorting_1,tr.even.gradeX td.sorting_1,table.display tr.even.gra
     margin-bottom:50px;
     display:inline-block;
     text-align:center;
-    font-family:'Lato',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 100;
 }
 /*language*/
@@ -4761,7 +4761,7 @@ div.tagsinput span.tag {
     color:#6d6d6d;
     text-transform:uppercase;
     padding:40px 30px;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight:600;
 }
 .region-earning-stats span {
@@ -4771,7 +4771,7 @@ div.tagsinput span.tag {
 }
 .location-earning-stats {
     text-align:center;
-    font-family:'Open Sans',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight:600;
     margin-bottom:30px;
     padding-left: 0;

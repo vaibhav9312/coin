@@ -1,11 +1,11 @@
-@font-face{
+/* @font-face{
 
 	src: url(../fonts/OregonLDOBlack.ttf);
 	font-family: 'C';
 	src: url(../fonts/OregonLDOLight.ttf);
 	font-family: 'D';
 	
-}
+} */
 .advancesubmit{padding-bottom:20px;background-image: radial-gradient(ellipse, white, transparent 70%);background-color:#e8ecee;}
 .infovalue .form-control{margin-bottom:0px !important;}
 .panel-heading{    background-color: #f7f9fa;position:relative}
@@ -15,7 +15,7 @@
 .col-md-4{float:left}
 .col-md-2{float:left;padding-top:10px;padding-left:20px;}
 .clear{clear:both}
-.teamhtag{font-size:18px;font-family: 'C';}
+.teamhtag{font-size:18px;font-family: 'Roboto Condensed', sans-serif;}
 .addmember{margin-top:20px;background-color:#5bc0de;border:1px solid #5bc0de;color:white;cursor:pointer;margin-left:20px;}
 .next{margin-left:20px;background-color:#34495e;}
 .back{background-color:#34495e;}
@@ -23,5 +23,5 @@
 .teamheading{padding:5px;padding-left:30px;}
 .fa-times{position:absolute;right:10px;top:10px;cursor:pointer;}
 .panel{margin-top:30px;}
-.panel h2{padding-left:30px;color:#6a6c6f;font-family: 'C';}
+.panel h2{padding-left:30px;color:#6a6c6f;font-family: 'Roboto Condensed', sans-serif;}
 .submitheading{padding-top:30px;}

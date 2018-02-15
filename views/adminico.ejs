@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include sidebar %>
+<!-- <style type="text/css" media="all">
+    @import "css/widgEditor.css";
+  </style> -->
+
+ 
+  
+  
+<section id="main-content">
+<section class="wrapper">
+    
+
+<div class="container-fluid">
+     <div class="container" style="background-color:white;padding-bottom:20px;margin-bottom:30px;">
+        
+ 
+  <div class="col-md-12">
+      <form id="alldata" method="post" action="/adminmaindata">
+      <h1 class="advertise submitheading text-center">Create ICO</h1>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b> Name</b></h4></div>
+        <div class="col-md-6"><input name="name" type="text" class="form-control"></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b> E-mail</b></h4></div>
+        <div class="col-md-6"><input  name="email" type="email" class="form-control"></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Event Name</b></h4></div>
+        <div class="col-md-6"><input  name="event" type="text" class="form-control"></div>
+      </div>
+      <div class="col-md-12 marginadjust">
+            <div class="col-md-12" style="padding:0px;">
+                <div><h4 class="formh4">Tell us about your project (this will be shown in your listing)</h4></div>
+             <div><textarea class="form-control inputtag" maxlength="255" name="aboutpro" rows="10" id="comment" placeholder="More Information" style="margin-bottom:0px"></textarea>
+             <span class="tagline">Maximun 256 characters</span>
+             </div>
+             </div>
+              <div class="col-md-12"></div>
+            </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Project Website<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="text" name="project_website"  class="form-control" required><span>e.g.: http://www.google.com (please include http:// or https://)</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Dates not defined yet - TBA </b></h4></div>
+        <div class="col-md-6"><input id="chek" onchange="checkbox()" name="tba" type="checkbox" class="form-control" style="width:10%"></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Start<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="date" id="start" name="startdate"  class="form-control" required><span><i>Please set time in UTC</i></span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>End<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="date" id="end" name="enddate"  class="form-control" required><span><i>Please set time in UTC</i></span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Project Category<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6">
+        <select  class="form-control" name="pcategory" required>
+        <option>Finance</option>
+        <option>Mining</option>
+        <option>Data Analyst</option>
+        <option>Gambling</option>
+        </select></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Project Type<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6">
+        <select  class="form-control" name="ptype" required>
+        <option>Blockchain</option>
+        <option>Asset/Token</option>
+       
+        </select></div>
+      </div>
+      <div class="infoitem col-md-12">
+          <div class="col-md-6"><h4><b>Platform</b></h4></div>
+          <div class="col-md-6">
+          <select  class="form-control" name="platform" required>
+              <option>Blockchain</option>
+              <option>BitShare</option>
+              <option>Burst</option>
+              <option>Counterparty</option>
+              <option>Ethereum</option>
+              <option>Ethereum classic</option>
+              <option>Graphine</option>
+              <option>Komodo</option>
+              <option>NEM</option>
+              <option>NEO</option>
+              <option>NuBits</option>
+              <option>Nxt</option>
+              <option>Omni</option>
+              <option>Qtum</option>
+              <option>Stellar Lumens</option>
+              <option>Ubiq</option>
+              <option>Waves</option>
+         
+          </select></div>
+        </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Token/Coin Name<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="text" name="coinname" maxlength="256"  class="form-control" required><span>Maximum 255 charactrers</span></div>
+      </div>
+
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Symbol<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="text" name="symbol"  class="form-control" maxlength="10" required><span>Maximum 10 charactrers</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Total Supply<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="number" name="tsupply"  class="form-control" required><span>e.g.: 100000000.99</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Link to logo<span class="asterisk">*</span></b></h4></div>
+        <div class="col-md-6"><input type="text" name="logopic" id="logopic" style="width:300px;display:none" ><br><input type="file" id="logoimg" onchange="logoimg1()" accept="image" /></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Link to Whitepaper</b></h4></div>
+        <div class="col-md-6"><input type="text" name="whitepaper"  class="form-control"><span>e.g.: http://www.google.com/paper (please include http:// or https://)</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Twitter</b></h4></div>
+        <div class="col-md-6"><input type="text" name="twiter"  class="form-control"><span>e.g.: http://www.twitter.com/your-name (please include http:// or https://)</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Reddit</b></h4></div>
+        <div class="col-md-6"><input type="text" name="reddit"  class="form-control"><span>e.g.: http://www.reddit.com/r/your-name (please include http:// or https://)</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Slack</b></h4></div>
+        <div class="col-md-6"><input type="text" name="slack"  class="form-control"><span>e.g.: https://your-team.slack.com</span></div>
+      </div>
+      <div class="infoitem col-md-12">
+        <div class="col-md-6"><h4><b>Bitcointalk Announcement Thread</b></h4></div>
+        <div class="col-md-6"><input type="text" name="btcannounce"  class="form-control"><span>e.g.: https://bitcointalk.org/your-topic</span></div>
+      </div>
+      <!-- member data and id -->
+      <input type="text" style="display:none" id="mcount" name="mcount"/>
+
+      <input type="text" id="members" name="members" style="display:none;">
+      <button id="jclick" type="submit" style="display:none"></button>
+    </form>
+    </div>
+      
+<div class="panel">
+
+        
+
+<form id="memberform" method="post" action="/memberlist">
+<div class="formhandler">
+<div class="panel-heading">
+<h4 class="teamheading">Team Members</h4>
+<span class="fa fa-times"></span>
+</div>
+<div class="col-md-12" style="margin-top:20px">
+<div class="col-md-6"><h4 class="teamhtag">Full Name<span class="asterisk">*</span></h4></div>
+<div class="col-md-6"><input type="text" id="fullname0" name="fullname" class="form-control" placeholder="Full Name" required></div>
+
+</div>
+
+<div class="col-md-12" style="margin-top:20px">
+<div class="col-md-6"><h4 class="teamhtag">Picture<span class="asterisk">*</span></h4></div>
+<div class="col-md-6"><input class="form-control" id="filedata0" onchange="submit1(0)" name="mpicture" type="file" accept="image" required/></div>
+<!-- <div class="col-md-2"></div><input type="text" style="display:none" id="profileimg0" name="profileimg" /> -->
+
+</div>
+
+<div class="col-md-12" style="margin-top:20px">
+<div class="col-md-6"><h4 class="teamhtag">Position<span class="asterisk">*</span></h4></div>
+<div class="col-md-6"><input type="text" name="position0" id="position0" class="form-control" placeholder="Position" required></div>
+<!-- <div class="col-md-2"></div> -->
+<!-- <div class="clear"></div> -->
+</div>
+
+
+
+<div class="col-md-12" style="margin-top:20px">
+<div class="col-md-6"><h4 class="teamhtag">Short Bio<span class="asterisk">*</span></h4></div>
+<div class="col-md-6"><textarea class="form-control inputtag" maxlength="256" name="shortbio0" name="aboutpro" rows="6" id="comment" placeholder="More Information" style="margin-bottom:0px" required></textarea></div>
+<!-- <div class="col-md-2"></div>
+<div class="clear"></div> -->
+</div>
+
+<div class="col-md-12" style="margin-top:20px">
+<div class="col-md-6"><h4 class="teamhtag">Linkedin</h4></div>
+<div class="col-md-6"><input type="text" id="linkdin0" name="linkdin0" class="form-control" placeholder="linkedin link"></div>
+<!-- <div class="col-md-2"></div>
+<div class="clear"></div> -->
+</div>
+
+<div class="col-md-12" style="margin-top:20px;margin-bottom:20px;">
+<div class="col-md-6"><h4 class="teamhtag">Upload ID (Passport)</h4></div>
+<div class="col-md-6"><input class="form-control" id="passportid0" onchange="passport(0)" type="file" accept="image" /></div>
+<!-- <div class="col-md-2"></div><input type="text" style="display:none" id="passportimg0" name="passportimg" />
+<div class="clear"></div> -->
+</div>
+</div>
+</form>
+</div>
+
+
+
+
+<div class="btn btn-lg nextbutton addmember" id="addmember"><b>Add Team Member</b></div><br>
+<!-- <button class="btn btn-lg nextbutton addmember inline back"><b>BACK</b></button> -->
+<button class="btn btn-lg nextbutton addmember inline next" onclick="allmembers()" ><b>Submit</b></button>
+
+</div>
+</div>
+
+</section>
+</section>
+<script>
+  var count = 1;
+
+$("#addmember").click(function(){
+    $("#mcount").val(count);
+ 
+            $(".panel").append("<div class='formhandler' id='first"+count+"'><div class='panel-heading'><h4 class='teamheading'>Team Members</h4><span class='fa fa-times' id='"+count+"' onclick='myFunction("+count+")'></span></div><div class='col-md-12' style='margin-top:20px'><div class='col-md-6'><h4 class='teamhtag'>Full Name<span class='asterisk'>*</span></h4></div><div class='col-md-6'><input type='text' class='form-control' placeholder='Full Name' id='fullname"+count+"' required ></div></div><div class='col-md-12' style='margin-top:20px'><div class='col-md-6'><h4 class='teamhtag'>Picture<span class='asterisk'>*</span></h4></div><div class='col-md-6'><input class='form-control' id='filedata"+count+"' onchange='submit1("+count+")' type='file' accept='image' required /></div><input type='text' style='display:none' id='profileimg"+count+"' name='profileimg' /></div><div class='col-md-12' style='margin-top:20px'><div class='col-md-6'><h4 class='teamhtag'>Position<span class='asterisk'>*</span></h4></div><div class='col-md-6'><input type='text' id='position"+count+"' class='form-control' placeholder='Position' required ></div></div><div class='col-md-12' style='margin-top:20px'><div class='col-md-6'><h4 class='teamhtag'>Short Bio<span class='asterisk'>*</span></h4></div><div class='col-md-6'><textarea class='form-control inputtag' maxlength='256'   rows='6'  id='shortbio"+count+"' placeholder='Short Bio' style='margin-bottom:0px' required></textarea> </div></div><div class='col-md-12' style='margin-top:20px'><div class='col-md-6'><h4 class='teamhtag'>Linkedin</h4></div><div class='col-md-6'><input type='text' id='linkedin"+count+"' class='form-control' placeholder='linkedin link'></div></div><div class='col-md-12' style='margin-top:20px;margin-bottom:20px;'><div class='col-md-6'><h4 class='teamhtag'>Upload ID (Passport)</h4></div><div class='col-md-6'><input class='form-control' id='passportid"+count+"' onchange='passport("+count+")' type='file' accept='image' /></div><div class='col-md-6'></div><input type='text' style='display:none' id='passportimg"+count+"' name='passportimg' /></div></div></div></div>")
+
+           
+            count++;
+    
+});
+
+function myFunction(id){
+
+$("#first"+id).remove();
+count--;
+}
+</script>
+    <script>
+      var all=[];
+      function allmembers(){
+        all=[]
+        for(var a=0;a<=count;a++){
+        var name=$('#fullname'+a+'').val();
+        var img=$('#profileimg'+a+'').val();
+        var position=$('#position'+a+'').val();
+        var shortbio=$('#shortbio'+a+'').val();
+        var linkdin=$('#linkdin'+a+'').val();
+        var passport=$('#passportimg'+a+'').val();
+        var ty={fullname:name,pimg:img,position:position,short:shortbio,linkdin:linkdin,passport:passport};
+        all.push(ty);
+          if(count-1==a){
+            var rr=JSON.stringify(all);
+            $('#members').val(rr);
+            $('#jclick').click();
+          }
+        }
+      }
+
+      function checkbox(){
+          console.log("helllo");
+        if($("#chek").prop('checked') == true){
+          console.log("true");
+          $("#chek").val("true");
+          $("#start").prop("disabled",true);
+          $("#end").prop("disabled",true);
+          //for removing required attribute
+          $("#start").removeAttr("required");
+          $("#end").removeAttr("required");
+      }else{
+        
+        $("#chek").val("");
+        $("#start").prop("disabled",false);
+          $("#end").prop("disabled",false);
+          //for adding the required attribute
+          $("#start").attr("required",'');
+          $("#end").attr("required",'');
+      }
+      }
+    </script>
+  
+  <script>
+
+    function submit1(a){
+      var data1 = new FormData();
+      var ty=$('#filedata'+a+'').prop('files')[0];
+      data1.append('file',ty );
+     
+      $.ajax({
+          
+          type: 'POST',               
+          processData: false, // important
+          contentType: false, // important
+          data: data1,
+          url: 'file/uploads',
+          dataType : 'script',  
+          success: function(data){
+           
+            var image = JSON.parse(data)[0].filename;
+          $('#profileimg'+a+'').val(image);
+          }
+          
+      }); 
+};
+
+function passport(a){
+      var data1 = new FormData();
+      var ty=$('#passportid'+a+'').prop('files')[0];
+      data1.append('file',ty );
+      $.ajax({
+          type: 'POST',               
+          processData: false, // important
+          contentType: false, // important
+          data: data1,
+          url: 'file/uploads',
+          dataType : 'script',  
+          success: function(data){
+            
+            var image = JSON.parse(data)[0].filename;
+          $('#passportimg'+a+'').val(image);
+          }
+      }); 
+};
+
+function logoimg1(){
+ 
+      var data1 = new FormData();
+      var ty=$('#logoimg').prop('files')[0];
+      data1.append('file',ty );
+      $.ajax({
+          type: 'POST',               
+          processData: false, // important
+          contentType: false, // important
+          data: data1,
+          url: 'file/uploads',
+          dataType : 'script',  
+          success: function(data){
+            
+            var image = JSON.parse(data)[0].filename;
+           
+          $('#logopic').val(image);
+          }
+      }); 
+};
+
+
+
+</script>
+
+<!-- <script src="js/advancesubmit.js"></script> -->
+             
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+                       

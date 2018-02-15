@@ -1,0 +1,7 @@
+.resetheading{color: #666666;
+    font-size: 2em;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;}
+    .resetemail{width:50%;margin: auto;}
+    .resetbutton{background-color:#34495e;color:white}
+    .resetcontainer{min-height:550px;padding-top:200px;margin-top:10px;}

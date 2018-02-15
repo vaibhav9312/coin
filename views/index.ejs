@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coincontents - The best ICO listing portal</title>
-    <link rel="icon" href="MI.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="css/jquery.classycountdown.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/Project-name.css">
-  </head>
-  <body>
+
+<%- include menu %>
+ 
     <!-- <header> -->
-        <%- include menu %>
+     
       <!-- <nav class="navbar navbar-expand-md navbar-light px-5 py-2">
         <a class="navbar-brand" href="/"><img src="img/logoz3.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,20 +48,20 @@
     <!-- </header> -->
     <section class="hero">
       <div class="container text-center text-white py-4">
-        <h3 class="font-weight-bold upperheadertag">The Best Token Sales and Ongoing ICO</h3>
-        <div class="row py-5 pt-5">
+        <h3 class="font-weight-bold upperheadertag tagline">The Best Token Sales and Ongoing <span class="icohighlight">ICO</span></h3>
+        <div class="row py-5 pt-5 threeinarow">
           <div class="col-md-4">
-            <img src="img/clock2.png" alt="" class="mb-4">
+            <img class="iconsthree" src="img/clock2.png" alt="" class="mb-4">
             <h5 class="upperheadertag">SIMPLE</h5>
             <p class="paragraph">Our experts will only list the best token sales ongoing and hence you don’t have to search among hundreds of ICOs</p>
           </div>
           <div class="col-md-4">
-            <img src="img/safe2.png" alt="" class="mb-4">
+            <img class="iconsthree" src="img/safe2.png" alt="" class="mb-4">
             <h5 class="upperheadertag">SAFE</h5>
             <p class="paragraph">We make sure that investors fund are always invested in the best possible ICOs and hence we only list the best one</p>
           </div>
           <div class="col-md-4">
-            <img src="img/coin2.png" alt="" class="mb-4">
+            <img class="iconsthree" src="img/coin2.png" alt="" class="mb-4">
             <h5 class="upperheadertag">PROFITABLE</h5>
             <p class="paragraph">We analyze which token sales will generate the highest revenue with minimal investment, you don't have to stress at all.</p>
           </div>
@@ -82,8 +74,8 @@
         <div class="txt d-lg-flex justify-content-between text-center">
           <img src="img/jibrel.png" alt="">
           <div class="text-center pt-4">
-            <h4><b>Decentralized Marketing Campaign Management Platform</b></h4>
-            <button class="btn btn-lg" style="background:#ff8a00;color:white;margin-top:20px;margin-bottom:10px">Participate in the ICO</button>
+            <h4 class="platform"><b>Decentralized Marketing Campaign Management Platform</b></h4>
+            <button class="btn btn-lg" style="background:#ff8a00;color:white;margin-top:20px;margin-bottom:10px;font-size:20px;">Participate in the ICO</button>
           </div>
          <div class="pt-4">
            
@@ -92,7 +84,7 @@
       </div>
     </section>
     <section class="TOK py-4">
-      <h3 class="font-weight-bold pl-md-5 pl-1" style="color:rgb(255, 120, 0)">Grade A Token Sales</h3>
+      <h3 class="font-weight-bold pl-md-5 pl-1 padderleft" style="color:rgb(255, 120, 0)">Grade A Token Sales</h3>
       <div class="container">
         <div class="row py-4">
           <%if(grade){
@@ -125,7 +117,7 @@
       </div>
     </section>
     <section class="TOK TOK1 py-4">
-      <h3 class="font-weight-bold pl-md-5 pl-1" style="color:rgb(255, 120, 0)">Grade B Token Sales</h3>
+      <h3 class="font-weight-bold pl-md-5 pl-1 padderleft" style="color:rgb(255, 120, 0)">Grade B Token Sales</h3>
       <div class="container">
         <div class="row py-4">
             <%if(grade){
@@ -424,17 +416,10 @@
           <div style="clear:both"></div>
         </div>
       </div>
-    </footer>
+   </footer>
 
 
-  	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/cda29a36d1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="js/jquery.knob.js"></script>
-    <script src="js/jquery.throttle.js"></script>
-    <script src="js/jquery.classycountdown.js"></script>
+  	
         <script>
         function second(days,hours,minutes,seconds){
             return days*86400+hours*3600+minutes*60+seconds;
