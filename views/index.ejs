@@ -88,7 +88,7 @@
       <div class="container">
         <div class="row py-4">
           <%if(grade){
-            grade.forEach(function(dat){
+            grade.forEach(function(dat,index){
               if(dat.grade=='A'){
               %>
           <div class="col-md-4" style="margin-bottom:20px" >
@@ -105,15 +105,19 @@
               </div>
               <p class="st"><%=dat.project_category%></p>
               </div>
-              <!-- <a href="html_pages/individualform.html"><div class="text-center pt-1 time mb-5 mb-md-0" id="time1">
-                <img src="img/time.png" alt="" class="m-auto img-fluid"></a> -->
+              <div class="text-center time pt-1 mb-5 mb-md-0" id="time<%=index%>">
+                  <img src="img/time.png" alt="" class="m-auto img-fluid">
+                </div>
               </a>
+              <!-- pt-1 time mb-5 mb-md-0 -->
               </div>
             <%} });}%>
           
           
         </div>
-       
+       <script>
+      
+       </script>
       </div>
     </section>
     <section class="TOK TOK1 py-4">
@@ -121,7 +125,7 @@
       <div class="container">
         <div class="row py-4">
             <%if(grade){
-              grade.forEach(function(dats){
+              grade.forEach(function(dats,index){
                 if(dats.grade=='B'){
                 %>
           <div class="col-md-3 col-sm-6" style="margin-bottom:20px">
@@ -138,9 +142,9 @@
               </div>
               <p class="st"><%=dats.project_category%></p>
               </div>
-              <!-- <div class="text-center pt-1 time mb-5 mb-md-0" id="time7">
+              <div class="text-center pt-1 time mb-5 mb-md-0" id="smalltimer<%=index%>">
                 <img src="img/time.png" alt="" class="m-auto img-fluid">
-              </div> -->
+              </div>
             </a>
           </div>
           <%} });}%>
@@ -419,101 +423,158 @@
    </footer>
 
 
-  	
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+   <script src="https://use.fontawesome.com/cda29a36d1.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="js/jquery.knob.js"></script>
+   <script src="js/jquery.throttle.js"></script>
+   <script src="js/jquery.classycountdown.js"></script>
+   <%if(grade){
+    grade.forEach(function(dat,index){
+      if(dat.grade=='A'){
+        var end = new Date(dat.enddate);
+        var now = new Date();
+        var isoDate = new Date(now).toISOString();
+       var newcurr = new Date(isoDate);
+      var seconds = Math.floor((end.getTime() - newcurr.getTime())/1000);
+      var minutes = Math.floor(seconds/60);
+      seconds = seconds%60;
+      var hours = Math.floor(minutes/60);
+      minutes = minutes%60;
+      var days = Math.floor(hours/24)+1;
+      hours = hours%24;
+     
+      %>
         <script>
         function second(days,hours,minutes,seconds){
             return days*86400+hours*3600+minutes*60+seconds;
         }
-        $('#time1').ClassyCountdown({
+        
+        $('#time<%=index%>').ClassyCountdown({
         theme: "black-very-wide", // theme
-        end: $.now() + second(15,15,50,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        end: $.now() + second(<%=days%>,<%=hours%>,<%=minutes%>,<%=seconds%>) //Enter you Time Here as DAYS, Hours, Minutes, Second
         });
 
-        $('#time2').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(18,22,31,23) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time2').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(18,22,31,23) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time3').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time3').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time4').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(6,10,29,23) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time4').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(6,10,29,23) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time5').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time5').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time6').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time6').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time7').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(27,10,28,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time7').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(27,10,28,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time8').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time8').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time9').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time9').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,00,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time10').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(10,3,30,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time10').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(10,3,30,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time11').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time11').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time12').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time12').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time13').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time13').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time14').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time14').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time15').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time15').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time16').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time16').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time17').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time17').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
-        $('#time18').ClassyCountdown({
-        theme: "black-very-wide", // theme
-        end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
-        });
+        // $('#time18').ClassyCountdown({
+        // theme: "black-very-wide", // theme
+        // end: $.now() + second(0,0,00,00) //Enter you Time Here as DAYS, Hours, Minutes, Second
+        // });
 
     </script>
+    <%} });}%>
+
+    <%if(grade){
+      grade.forEach(function(dats,index){
+        if(dats.grade=='B'){
+          var end = new Date(dats.enddate);
+          var now = new Date();
+          var isoDate = new Date(now).toISOString();
+         var newcurr = new Date(isoDate);
+         var seconds = Math.floor((end.getTime() - newcurr.getTime())/1000);
+        var minutes = Math.floor(seconds/60);
+        seconds = seconds%60;
+        var hours = Math.floor(minutes/60);
+        minutes = minutes%60;
+        var days = Math.floor(hours/24)+1;
+        hours = hours%24;
+        
+        
+        
+         
+          
+        %>
+          <script>
+          function second(days,hours,minutes,seconds){
+              return days*86400+hours*3600+minutes*60+seconds;
+          }
+          
+          $('#smalltimer<%=index%>').ClassyCountdown({
+          theme: "black-very-wide", // theme
+          end: $.now() + second(<%=days%>,<%=hours%>,<%=minutes%>,<%=seconds%>) //Enter you Time Here as DAYS, Hours, Minutes, Second
+          });
+        </script>
+    <%} });}%>
   </body>
 </html>

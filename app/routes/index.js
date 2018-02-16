@@ -7,6 +7,7 @@ var dateFormat = require('dateformat');
 const db1=require('../dbconnect');
 var db = db1.fdata();
 const address=require('../address');
+const bal=require('../address/balance');
 var session = require('client-sessions');
 
 var handlebars = require('handlebars');
@@ -56,7 +57,7 @@ module.exports=() => {
        
           res.render('index',{user:req.query.user,grade:result});
         }else{
-           res.render('index',{user:false,grade:result});
+           res.render('index',{user:req.session.user.fname,grade:result});
         }
       }
     });
@@ -174,11 +175,11 @@ module.exports=() => {
         },
         
         '/profile':(req,res) =>{
-          // if (!req.user&&!req.session.user) {
-            // res.redirect('login');
-             //}else{
-               res.render('profile',{user:false});
-             //}
+          if (!req.user&&!req.session.user) {
+            res.redirect('login');
+             }else{
+               res.render('profile',{user:req.session.user.fname,details:req.session.user});
+             }
          },
          '/reset':(req,res) =>{
           // if (!req.user&&!req.session.user) {
@@ -285,12 +286,30 @@ module.exports=() => {
         },
         '/payment':(req,res)=>{
           var add=address.fdata();
-          console.log(add);
-          res.render('payment',{address:add});
+          if (!req.user&&!req.session.user) {
+           res.redirect('/');
+            }else{
+              if(req.query.id)
+              res.render('payment',{user:req.session.user.fname,address:add,id:req.query.id});
+             else
+             res.redirect('/');
+            }
+          
+         
+          
         }
 
 },
   'post':{
+    '/checkBalance':(req,res)=>{
+      var balance=bal.balance(req.query.ad)
+      console.log(balance);
+      if(balance>0.00000){
+        res.send(true);
+      }else{
+        res.send(false);
+      }
+    },
     
       '/adminlogin':(req,res)=>{
       
@@ -316,8 +335,6 @@ module.exports=() => {
           if(req.session.user=='Admin@gmail.com'){
             res.redirect('/eventdetail?id='+req.body.id);
           }else{
-         
-          
             res.redirect('/payment');
           }
           
@@ -490,7 +507,7 @@ module.exports=() => {
         status:1,
         platform:req.body.platform,
         team:team}},function(err,result){
-         res.redirect('/detaildata?id='+req.body.id);
+         res.redirect('/payment?id='+req.body.id);
         });
 
     },

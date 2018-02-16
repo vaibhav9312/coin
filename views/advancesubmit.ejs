@@ -31,11 +31,18 @@
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Start<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="date" id="start" name="startdate" style="width:300px" required><span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
+        <div class="infovalue inline token">
+          <!-- <input type="datetime-local" id="start" name="startdate" style="width:300px" required> -->
+          <input id="datetimepicker" name="startdate" type="text" >
+          <span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
       </div>
+      
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>End<span class="asterisk">*</span></b></h4></div>
-        <div class="infovalue inline token"><input type="date" id="end" name="enddate" style="width:300px" required><span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
+        <div class="infovalue inline token">
+          <!-- <input type="date" id="end" name="enddate" style="width:300px" required> -->
+          <input id="datetimepickerend" name="enddate" type="text" >
+          <span style="padding-left:10px;"><i>Please set time in UTC</i></span></div>
       </div>
       <div class="infoitem">
         <div class="infolabel inline"><h4><b>Project Category<span class="asterisk">*</span></b></h4></div>
@@ -59,7 +66,7 @@
       <div class="infoitem">
           <div class="infolabel inline"><h4><b>Platform</b></h4></div>
           <div class="infovalue inline token">
-          <select style="width:300px" name="platform" required>
+          <select style="width:300px" name="platform" multiple="true" required>
               <option>Blockchain</option>
               <option>BitShare</option>
               <option>Burst</option>
@@ -184,7 +191,22 @@
 <div class="btn btn-lg nextbutton addmember" id="addmember"><b>Add Team Member</b></div><br>
 <button class="btn btn-lg nextbutton addmember inline back"><b>BACK</b></button>
 <button class="btn btn-lg nextbutton addmember inline next" onclick="allmembers()" ><b>NEXT-PAYMENT</b></button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
 
+<!-- Here by using Id selector the datetime picker will load on this input element -->
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
+<script src="http://cdn.craig.is/js/rainbow-custom.min.js"></script>
+<script>
+      $(document).ready(function() {
+        	$.datetimepicker.setLocale('pt-UK');
+         $('#datetimepicker').datetimepicker();
+         $('#datetimepickerend').datetimepicker();
+      });
+</script>
 
 </div>
      
@@ -311,5 +333,8 @@ function logoimg1(){
      <%/*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/menu.js"></script>*/%>
 <script src="js/advancesubmit.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script> -->
+
+
     </body>
     </html>

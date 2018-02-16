@@ -106,7 +106,7 @@ app.post('/adminmaindata',coin.router);
 app.post('/approve',coin.router);
 app.post('/edeteil',coin.router);
 app.post('/check-mail',coin.router);
-
+app.post('/checkBalance',coin.router);
 
 var uploadRouter = require('./app/routes/uploder')();
 app.use('/file/', uploadRouter);

@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Coin Contents Payment</title>
-  <base href="{{baseUrl}}" />
-  <script src="/socket.io/socket.io.js"></script>
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-  <!-- <script src="js/bitcore-lib/bitcore-lib.js"></script> -->
-</head>
-
-<body>
+<html lang="en">
+<%- include menu %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
   <!-- <h1>Lemonade Stand</h1> -->
-  <h2>Invoice</h2>
-  <div id="qrcode"></div>
-  <p>Please send 0.001 BTC to <%=address%></p>
+  <h2 class="text-center">Invoice</h2>
+  <div class="text-center" id="qrcode"></div>
+  <p class="text-center">Please send 0.001 BTC to <%=address%></p>
+  <p>After successful payment Page will redirect the next process</p>
   <!-- <h2>Transactions Received</h2> -->
   <!-- <ul id="txids">
   </ul> -->
@@ -38,6 +28,26 @@
     });
     socket.emit('subscribe', 'bitcoind/addresstxid', ['{{address}}']);
   </script> -->
+  <script>
+  setTimeout(function(){
+    // $.ajax({
+    //   type:"POST",
+    //   url:'/checkBalance?ad='+<%=address%>,
+    //   success:function(result){
+    //     if(result){
+    //       console.log(result);
+    //       window.location.replace("/detaildata?id="+<%=id%>);
+        
+    //     }
+
+    //   }
+    // });
+    window.location.replace("/detaildata?id=<%=id%>");
+  },10000);
+  </script>
+  <footer>
+      <%- include footer %>
+      </footer>
 </body>
 
 </html>
